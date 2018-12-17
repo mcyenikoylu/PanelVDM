@@ -1,0 +1,39 @@
+<%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="DMProjectMobil.MainMaster" %>
+
+<%-- DXCOMMENT: Page Main.master is a master page that contains central area layout --%>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+        <dx:ASPxPanel ID="LeftPane" runat="server" FixedPosition="WindowLeft" ClientInstanceName="leftPane" CssClass="leftPane" Collapsible="true">
+            <SettingsAdaptivity CollapseAtWindowInnerWidth="1023" />
+            <Styles>
+                <Panel CssClass="panel"></Panel>
+            </Styles>
+            <PanelCollection>
+                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                        <div class="leftPanel">
+                            <dx:ASPxNavBar ID="ASPxNavBar1" runat="server" AutoCollapse="True" EnableAnimation="True" Width="100%">
+                                <Border BorderWidth="0px" />
+                                <Paddings Padding="0px" />
+                                <Groups>
+                                    <dx:NavBarGroup Text="Bayi Ýþlemleri">
+                                        <Items>
+                                            <dx:NavBarItem Text="Cari Takip" NavigateUrl="CariHesapEkstresi.aspx"></dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="Hesabým">
+                                        <Items>
+                                            <dx:NavBarItem Text="Hesap Bilgilerim"></dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                </Groups>
+                            </dx:ASPxNavBar>
+                        </div>
+                </dx:PanelContent>
+            </PanelCollection>
+        </dx:ASPxPanel>
+
+        <div class="contentPane">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+            
+
+</asp:Content>

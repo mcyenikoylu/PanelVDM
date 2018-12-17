@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages>
+  <Default>
+  </Default>
+  <Duyurularim>
+  </Duyurularim>
+  <Widgets>
+    <Item Name="DateTime" ToolTip="Tarih, saat bilgisi" ImageUrl="Content/Images/MenuIcons/Yeni/DateTime.png" BeginGroup="True" GroupName="DateTime" Checked="false"  />
+    <Item Name="Calendar" ToolTip="Takvim" ImageUrl="Content/Images/MenuIcons/Yeni/Calendar.png"  GroupName="Calendar" Checked="false"  />
+    <Item Name="Mail" ToolTip="Elektronik postalar" ImageUrl="Content/Images/MenuIcons/Yeni/Mail.png"  GroupName="Mail" Checked="false"  />
+    <Item Name="Weather" ToolTip="Hava durumu" ImageUrl="Content/Images/MenuIcons/Yeni/weather.png"  GroupName="Weather" Checked="false"   />
+    <Item Name="Trading" ToolTip="Finansal bilgiler" ImageUrl="Content/Images/MenuIcons/Yeni/Trading.png"  GroupName="Trading" Checked="True" />
+    <Item Name="News" ToolTip="Son duyurular" ImageUrl="Content/Images/MenuIcons/Yeni/News.png"  GroupName="News" Checked="True"  />
+    <Item Name="Slider" ToolTip="Slider duyurular" ImageUrl="Content/Images/MenuIcons/Yeni/Slider.png"  GroupName="Slider" Checked="True"  />
+    <Item Name="Urun" ToolTip="Çok satılan ürünler" ImageUrl="Content/Images/MenuIcons/Yeni/Urun.png"  GroupName="Urun" Checked="false"  />
+  </Widgets>
+  <TeknikYonetici>
+  </TeknikYonetici>
+  <Takvim>
+  </Takvim>
+  <KullaniciTanimlari>
+    <Item Name="New" Text="Yeni" ToolTip="Yeni Kullanıcı Yarat" />
+    <Item Name="Edit" Text="Düzenle" ToolTip="Seçili Kullanıcıyı Düzenle" />
+    <Item Name="Delete" Text="Sil" ToolTip="Seçili Kullanıcıyı Sil" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </KullaniciTanimlari>
+  <HedefSatisDurumu>
+  </HedefSatisDurumu>
+  <TYHedefSatisDurumu>
+    <Item Name="NewYukle_HedefSatisDurumu" Text="İçeri Yeni Excel Aktar" ToolTip="Yeni Kullanıcı Yarat" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+    <Item Name="Print" ToolTip="Dışa aktar" ImageUrl="Content/Images/MenuIcons/Spreadsheet.png" BeginGroup="True" DropDownMode="True" ReportName="EmployeeDirectory">
+      <Item Name="ExportToSpreadsheet" Text="Excel'e Aktar" ReportName="EmployeeSummary" />
+      <Item Name="ExportToAcrobatReader" Text="PDF'e Aktar" ReportName="EmployeeProfile" />
+    </Item>
+  </TYHedefSatisDurumu>
+  <RaporEnvanter>
+  </RaporEnvanter>
+  <RaporFatura>
+  </RaporFatura>
+  <RaporKar>
+  </RaporKar>
+  <RaporMalzemeSonAlimMaliyeti>
+  </RaporMalzemeSonAlimMaliyeti>
+  <TYAktivasyonAraRaporu>
+    <Item Name="NewYukle_AktivasyonAraRaporu" Text="İçeri Yeni Excel Aktar" ToolTip="Yeni Excel Aktar" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+    <Item Name="Print" ToolTip="Dışa aktar" ImageUrl="Content/Images/MenuIcons/Spreadsheet.png" BeginGroup="True" DropDownMode="True" ReportName="EmployeeDirectory">
+      <Item Name="ExportToSpreadsheet" Text="Excel'e Aktar" ReportName="EmployeeSummary" />
+      <Item Name="ExportToAcrobatReader" Text="PDF'e Aktar" ReportName="EmployeeProfile" />
+    </Item>
+  </TYAktivasyonAraRaporu>
+  <CihazTakip>
+  </CihazTakip>
+  <TYDuyurular>
+  </TYDuyurular>
+  <CihazAktivasyonAraRaporu>
+  </CihazAktivasyonAraRaporu>
+  <TYTemlikIslemleri>
+    <Item Name="NewYukle_TemlikRaporu" Text="İçeri Yeni Excel Aktar" ToolTip="Yeni Excel Aktar" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+    <Item Name="Print" ToolTip="Dışa aktar" ImageUrl="Content/Images/MenuIcons/Spreadsheet.png" BeginGroup="True" DropDownMode="True" ReportName="EmployeeDirectory">
+      <Item Name="ExportToSpreadsheet" Text="Excel'e Aktar" ReportName="EmployeeSummary" />
+      <Item Name="ExportToAcrobatReader" Text="PDF'e Aktar" ReportName="EmployeeProfile" />
+    </Item>
+  </TYTemlikIslemleri>
+  <CihazTemlik>
+        <Item Name="Print" ToolTip="Dışa aktar" ImageUrl="Content/Images/MenuIcons/Spreadsheet.png" BeginGroup="True" DropDownMode="True" ReportName="EmployeeDirectory">
+      <Item Name="ExportToSpreadsheet" Text="Excel'e Aktar" ReportName="EmployeeSummary" />
+      <Item Name="ExportToAcrobatReader" Text="PDF'e Aktar" ReportName="EmployeeProfile" />
+    </Item>
+  </CihazTemlik>
+  <PrimHakedis>
+  </PrimHakedis>
+  <TYPrimHakedis>
+    <Item Name="NewYukle_PrimHakedis" Text="İçeri Yeni Excel Aktar" ToolTip="Yeni Excel Aktar" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+    <Item Name="Print" ToolTip="Dışa aktar" ImageUrl="Content/Images/MenuIcons/Spreadsheet.png" BeginGroup="True" DropDownMode="True" ReportName="EmployeeDirectory">
+      <Item Name="ExportToSpreadsheet" Text="Excel'e Aktar" ReportName="EmployeeSummary" />
+      <Item Name="ExportToAcrobatReader" Text="PDF'e Aktar" ReportName="EmployeeProfile" />
+    </Item>
+  </TYPrimHakedis>
+  <TYAlSatKarlilik>
+    <Item Name="NewYukle_AlSatKarlilik" Text="İçeri Yeni Excel Aktar" ToolTip="Yeni Excel Aktar" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+    <Item Name="Print" ToolTip="Dışa aktar" ImageUrl="Content/Images/MenuIcons/Spreadsheet.png" BeginGroup="True" DropDownMode="True" ReportName="EmployeeDirectory">
+      <Item Name="ExportToSpreadsheet" Text="Excel'e Aktar" ReportName="EmployeeSummary" />
+      <Item Name="ExportToAcrobatReader" Text="PDF'e Aktar" ReportName="EmployeeProfile" />
+    </Item>
+  </TYAlSatKarlilik>
+  <AlSatKarlilik>
+  </AlSatKarlilik>
+  <RaporEnvanter>
+  </RaporEnvanter>
+  <RaporKar>
+  </RaporKar>
+  <RaporFatura>
+  </RaporFatura>
+  <RaporMalzemeSonAlimMaliyeti>
+  </RaporMalzemeSonAlimMaliyeti>
+  <RaporGenelDurum>
+  </RaporGenelDurum>
+  <Dashboards>
+  </Dashboards>
+  <BayiTanimlari>
+    <Item Name="New" Text="Yeni" ToolTip="Yeni Bayi Oluştur" />
+    <Item Name="Edit" Text="Düzenle" ToolTip="Seçili Bayii Düzenle" />
+    <Item Name="Delete" Text="Sil" ToolTip="Seçili Bayii Sil" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </BayiTanimlari>
+  <DestekMasasi>
+  </DestekMasasi>
+  <Destek>
+  </Destek>
+  <DestekMasasiTeknik>
+  </DestekMasasiTeknik>
+  <PersonelYonetici></PersonelYonetici>
+  <SistemYoneticisi></SistemYoneticisi>
+  <CariTakip>
+    <Item Name="NewYukle_CariTakip" Text="İçeri Yeni Excel Aktar" ToolTip="Yeni Excel Aktar" />
+  </CariTakip>
+  <TYDokuman>
+  </TYDokuman>
+  <Dokumanlar>
+  </Dokumanlar>
+  <FiyatListesi></FiyatListesi>
+  <UrunTanimlari></UrunTanimlari>
+  <SiparisIslemleri></SiparisIslemleri>
+  <MenuYetkileri>
+    <Item Name="Edit" Text="Düzenle" ToolTip="Seçili Rolü Düzenle" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </MenuYetkileri>
+<Aktivasyon></Aktivasyon>
+<AktivasyonDashboard></AktivasyonDashboard>
+<AktivasyonFaturali>
+  <Item Name="New" Text="Yeni Kayıt" ToolTip="Yeni Hat Kayıdı Oluştur" />
+<Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+</AktivasyonFaturali>
+<AktivasyonFaturasiz>
+    <Item Name="New" Text="Yeni Kayıt" ToolTip="Yeni Hat Kayıdı Oluştur" />
+  <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" 
+      UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+</AktivasyonFaturasiz>
+  <AktivasyonSebekeIciGecis>
+      <Item Name="New" Text="Yeni Kayıt" ToolTip="Yeni Hat Kayıdı Oluştur" />
+  <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png" 
+      UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+</AktivasyonSebekeIciGecis>
+  <AktivasyonTaahhutname>
+    <Item Name="New" Text="Yeni Kayıt" ToolTip="Yeni Hat Kayıdı Oluştur" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png"
+        UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </AktivasyonTaahhutname>
+  <AktivasyonHatIptal>
+    <Item Name="New" Text="Yeni Kayıt" ToolTip="Yeni Hat Kayıdı Oluştur" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png"
+        UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </AktivasyonHatIptal>
+  <AktivasyonVodafoneNet>
+    <Item Name="New" Text="Yeni Kayıt" ToolTip="Yeni Hat Kayıdı Oluştur" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png"
+        UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </AktivasyonVodafoneNet>
+  <AktivasyonEFatura>
+    <Item Name="New" Text="Yeni Kayıt" ToolTip="Yeni Hat Kayıdı Oluştur" />
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png"
+        UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </AktivasyonEFatura>
+  <Aktivasyon>
+    <Item Name="ColumnsCustomization" ToolTip="Sütunları özelleştirme" ImageUrl="Content/Images/MenuIcons/ColumnCustomization.png"
+        UrlDisabled="Content/Images/MenuIcons/ColumnCustomization_Disabled.png" GroupName="Filtre" />
+  </Aktivasyon>
+  <AktivasyonDashboard></AktivasyonDashboard>
+  <AktDashboard></AktDashboard>
+  <YBayiCihazDashboard></YBayiCihazDashboard>
+  <YBayiCihazTemlikGunDashboard></YBayiCihazTemlikGunDashboard>
+</Pages>

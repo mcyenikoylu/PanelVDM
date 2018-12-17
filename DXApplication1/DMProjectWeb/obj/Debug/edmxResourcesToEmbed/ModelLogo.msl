@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TIGER2ModelStoreContainer" CdmEntityContainer="TIGER2Entities">
+    <FunctionImportMapping FunctionImportName="OD_SP_006_01_CARI_EKSTRE" FunctionName="TIGER2Model.Store.OD_SP_006_01_CARI_EKSTRE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIGER2Model.OD_SP_006_01_CARI_EKSTRE_Result">
+          <ScalarProperty Name="CARI_TURU" ColumnName="CARI_TURU" />
+          <ScalarProperty Name="CARI_KODU" ColumnName="CARI_KODU" />
+          <ScalarProperty Name="CARI_ADI" ColumnName="CARI_ADI" />
+          <ScalarProperty Name="MODUL" ColumnName="MODUL" />
+          <ScalarProperty Name="ISLEM_TURU" ColumnName="ISLEM_TURU" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="FISNO" ColumnName="FISNO" />
+          <ScalarProperty Name="BORC" ColumnName="BORC" />
+          <ScalarProperty Name="ALACAK" ColumnName="ALACAK" />
+          <ScalarProperty Name="FISI_KAYDEDEN" ColumnName="FISI_KAYDEDEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_BayiBakiye" FunctionName="TIGER2Model.Store.OD_SP_BayiBakiye">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIGER2Model.OD_SP_BayiBakiye_Result">
+          <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="Alacak" ColumnName="Alacak" />
+          <ScalarProperty Name="Borc" ColumnName="Borc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_AE_KAR" FunctionName="TIGER2Model.Store.OD_SP_AE_KAR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIGER2Model.OD_SP_AE_KAR_Result">
+          <ScalarProperty Name="FIRMA" ColumnName="FIRMA" />
+          <ScalarProperty Name="FISTARIHI" ColumnName="FISTARIHI" />
+          <ScalarProperty Name="STOKKODU" ColumnName="STOKKODU" />
+          <ScalarProperty Name="STOKADI" ColumnName="STOKADI" />
+          <ScalarProperty Name="OZELKOD1" ColumnName="OZELKOD1" />
+          <ScalarProperty Name="OZELKOD2" ColumnName="OZELKOD2" />
+          <ScalarProperty Name="OZELKOD3" ColumnName="OZELKOD3" />
+          <ScalarProperty Name="OZELKOD4" ColumnName="OZELKOD4" />
+          <ScalarProperty Name="SATISTUTARI" ColumnName="SATISTUTARI" />
+          <ScalarProperty Name="MALIYET" ColumnName="MALIYET" />
+          <ScalarProperty Name="SATIS_MIKTARI" ColumnName="SATIS_MIKTARI" />
+          <ScalarProperty Name="KAR" ColumnName="KAR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_AEO_ENVANTER_006" FunctionName="TIGER2Model.Store.OD_SP_AEO_ENVANTER_006">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIGER2Model.OD_SP_AEO_ENVANTER_006_Result">
+          <ScalarProperty Name="MAGAZA" ColumnName="MAGAZA" />
+          <ScalarProperty Name="STOKKODU" ColumnName="STOKKODU" />
+          <ScalarProperty Name="STOKACIKLAMASI" ColumnName="STOKACIKLAMASI" />
+          <ScalarProperty Name="OZELKOD1" ColumnName="OZELKOD1" />
+          <ScalarProperty Name="OZELKOD2" ColumnName="OZELKOD2" />
+          <ScalarProperty Name="OZELKOD3" ColumnName="OZELKOD3" />
+          <ScalarProperty Name="OZELKOD4" ColumnName="OZELKOD4" />
+          <ScalarProperty Name="ORTALAMAMALIYET" ColumnName="ORTALAMAMALIYET" />
+          <ScalarProperty Name="ORTALAMAURUNDEGERI" ColumnName="ORTALAMAURUNDEGERI" />
+          <ScalarProperty Name="STOKMIKTARI" ColumnName="STOKMIKTARI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_CihazTakip" FunctionName="TIGER2Model.Store.OD_SP_CihazTakip">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIGER2Model.OD_SP_CihazTakip_Result">
+          <ScalarProperty Name="FIRMA_ISMI" ColumnName="FIRMA_ISMI" />
+          <ScalarProperty Name="FATURA_NO" ColumnName="FATURA_NO" />
+          <ScalarProperty Name="STOK_KODU" ColumnName="STOK_KODU" />
+          <ScalarProperty Name="STOK_ACIKLAMASI" ColumnName="STOK_ACIKLAMASI" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="FATURA_TAR" ColumnName="FATURA_TAR" />
+          <ScalarProperty Name="FATURA_NET_TUTARI" ColumnName="FATURA_NET_TUTARI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_PRONIST_006_FATURA" FunctionName="TIGER2Model.Store.OD_SP_PRONIST_006_FATURA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIGER2Model.OD_SP_PRONIST_006_FATURA_Result">
+          <ScalarProperty Name="CARI_HESAP_KODU" ColumnName="CARI_HESAP_KODU" />
+          <ScalarProperty Name="CARI_HESAP_ADI" ColumnName="CARI_HESAP_ADI" />
+          <ScalarProperty Name="FATURA_NO" ColumnName="FATURA_NO" />
+          <ScalarProperty Name="BELGE_NO" ColumnName="BELGE_NO" />
+          <ScalarProperty Name="FATURA_TARIHI" ColumnName="FATURA_TARIHI" />
+          <ScalarProperty Name="ODEME_TIPI" ColumnName="ODEME_TIPI" />
+          <ScalarProperty Name="STOK_KODU" ColumnName="STOK_KODU" />
+          <ScalarProperty Name="STOK_ADI" ColumnName="STOK_ADI" />
+          <ScalarProperty Name="SERI_NO" ColumnName="SERI_NO" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_US_006_01_MALZEME_SONALIMMALIYET" FunctionName="TIGER2Model.Store.OD_SP_US_006_01_MALZEME_SONALIMMALIYET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TIGER2Model.OD_SP_US_006_01_MALZEME_SONALIMMALIYET_Result">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ILK_GIRIS_TARIHI" ColumnName="ILK_GIRIS_TARIHI" />
+          <ScalarProperty Name="SON_GIRIS_TARIHI" ColumnName="SON_GIRIS_TARIHI" />
+          <ScalarProperty Name="SON_CIKIS_TARIHI" ColumnName="SON_CIKIS_TARIHI" />
+          <ScalarProperty Name="ILK_GIRISDEN_GUN_SAYISI" ColumnName="ILK_GIRISDEN_GUN_SAYISI" />
+          <ScalarProperty Name="SON_GIRISDEN_GUN_SAYISI" ColumnName="SON_GIRISDEN_GUN_SAYISI" />
+          <ScalarProperty Name="SON_ALIM_TUTARI" ColumnName="SON_ALIM_TUTARI" />
+          <ScalarProperty Name="GIRIS_MIKTARI" ColumnName="GIRIS_MIKTARI" />
+          <ScalarProperty Name="CIKIS_MIKTARI" ColumnName="CIKIS_MIKTARI" />
+          <ScalarProperty Name="KALAN_MIKTAR" ColumnName="KALAN_MIKTAR" />
+          <ScalarProperty Name="SON_ALIM_KALAN_MALIYET" ColumnName="SON_ALIM_KALAN_MALIYET" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

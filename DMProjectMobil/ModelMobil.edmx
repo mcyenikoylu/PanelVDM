@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DMPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="OD_SP_006_01_CARI_EKSTRE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CARI_KODU" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="DMPortalModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DMPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DMPortalEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="OD_SP_006_01_CARI_EKSTRE" ReturnType="Collection(DMPortalModel.OD_SP_006_01_CARI_EKSTRE_Result)">
+            <Parameter Name="CARI_KODU" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="OD_SP_006_01_CARI_EKSTRE_Result">
+          <Property Type="String" Name="CARI_TURU" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="CARI_KODU" Nullable="true" MaxLength="17" />
+          <Property Type="String" Name="CARI_ADI" Nullable="true" MaxLength="201" />
+          <Property Type="String" Name="MODUL" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="ISLEM_TURU" Nullable="false" MaxLength="41" />
+          <Property Type="DateTime" Name="TARIH" Nullable="true" Precision="23" />
+          <Property Type="String" Name="FISNO" Nullable="true" MaxLength="17" />
+          <Property Type="Double" Name="BORC" Nullable="true" />
+          <Property Type="Double" Name="ALACAK" Nullable="true" />
+          <Property Type="String" Name="FISI_KAYDEDEN" Nullable="true" MaxLength="21" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DMPortalModelStoreContainer" CdmEntityContainer="DMPortalEntities" >
+          <FunctionImportMapping FunctionImportName="OD_SP_006_01_CARI_EKSTRE" FunctionName="DMPortalModel.Store.OD_SP_006_01_CARI_EKSTRE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DMPortalModel.OD_SP_006_01_CARI_EKSTRE_Result">
+                <ScalarProperty Name="CARI_TURU" ColumnName="CARI_TURU" />
+                <ScalarProperty Name="CARI_KODU" ColumnName="CARI_KODU" />
+                <ScalarProperty Name="CARI_ADI" ColumnName="CARI_ADI" />
+                <ScalarProperty Name="MODUL" ColumnName="MODUL" />
+                <ScalarProperty Name="ISLEM_TURU" ColumnName="ISLEM_TURU" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="FISNO" ColumnName="FISNO" />
+                <ScalarProperty Name="BORC" ColumnName="BORC" />
+                <ScalarProperty Name="ALACAK" ColumnName="ALACAK" />
+                <ScalarProperty Name="FISI_KAYDEDEN" ColumnName="FISI_KAYDEDEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="tr-TR">
+  <Title Text="Bayi Durum Panosu" />
+  <DataSources>
+    <SqlDataSource ComponentName="DataSource1">
+      <Name>S_Y_Dashboard_BayiCihaz_TemlikGun</Name>
+      <Connection Name="ApplicationServices" FromAppConfig="true" />
+      <Query Type="StoredProcQuery" Name="S_Y_Dashboard_BayiCihaz_TemlikGun">
+        <ProcName>S_Y_Dashboard_BayiCihaz_TemlikGun</ProcName>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem2" Name="Bayinin Cihaz Alımları" DataSource="DataSource1" DataMember="S_Y_Dashboard_BayiCihaz_TemlikGun">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="BayiAdi" DefaultId="DataItem0" />
+        <Measure DataMember="Bakiye" DefaultId="DataItem1" />
+        <Measure DataMember="Bakiye" DefaultId="DataItem2" />
+        <Dimension DataMember="Bakiye" DefaultId="DataItem3" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem1" />
+        </GridMeasureColumn>
+        <GridSparklineColumn>
+          <SparklineValue DefaultId="DataItem2" />
+        </GridSparklineColumn>
+      </GridColumns>
+      <SparklineArgument DefaultId="DataItem3" />
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <Chart ComponentName="chartDashboardItem1" Name="Tüm Bayiler" DataSource="DataSource1" DataMember="S_Y_Dashboard_BayiCihaz_TemlikGun">
+      <DataItems>
+        <Measure DataMember="Alacak" DefaultId="DataItem0" />
+        <Measure DataMember="Borc" DefaultId="DataItem1" />
+        <Measure DataMember="Bakiye" DefaultId="DataItem2" />
+        <Measure DataMember="BayiAdi" SummaryType="Count" DefaultId="DataItem3" />
+        <Dimension DataMember="BayiAdi" DefaultId="DataItem4" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem4" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem0" />
+              <PointLabelOptions ContentType="Value" />
+            </Simple>
+            <Simple>
+              <Value DefaultId="DataItem1" />
+              <PointLabelOptions ContentType="Value" />
+            </Simple>
+            <Simple PlotOnSecondaryAxis="true">
+              <Value DefaultId="DataItem2" />
+              <PointLabelOptions ContentType="Value" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Pie ComponentName="pieDashboardItem1" Name="Finans Dağılımı" DataSource="DataSource1" DataMember="S_Y_Dashboard_BayiCihaz_TemlikGun">
+      <DataItems>
+        <Measure DataMember="Alacak" DefaultId="DataItem0" />
+        <Measure DataMember="Borc" DefaultId="DataItem1" />
+        <Measure DataMember="Bakiye" DefaultId="DataItem2" />
+        <Dimension DataMember="BayiAdi" DefaultId="DataItem3" />
+        <Dimension DataMember="BayiAdi" DefaultId="DataItem4" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem4" />
+      </SeriesDimensions>
+      <Values>
+        <Value DefaultId="DataItem0" />
+        <Value DefaultId="DataItem1" />
+        <Value DefaultId="DataItem2" />
+      </Values>
+    </Pie>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutItem DashboardItem="gridDashboardItem2" Weight="85.949367088607588" />
+      <LayoutGroup Orientation="Vertical" Weight="114.0506329113924">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="130.50632911392404" />
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="130.50632911392404" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

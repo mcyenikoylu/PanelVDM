@@ -1,0 +1,869 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DMPortalModelStoreContainer" CdmEntityContainer="DMPortalEntities">
+    <FunctionImportMapping FunctionImportName="aspnet_Membership_GetAllUsers" FunctionName="DMPortalModel.Store.aspnet_Membership_GetAllUsers" />
+    <FunctionImportMapping FunctionImportName="S_Duyurularim" FunctionName="DMPortalModel.Store.S_Duyurularim">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Duyurularim_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="DuyuruTarihi" ColumnName="DuyuruTarihi" />
+          <ScalarProperty Name="SistemKayitTarihi" ColumnName="SistemKayitTarihi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_HedefSatisDurumu" FunctionName="DMPortalModel.Store.S_HedefSatisDurumu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_HedefSatisDurumu_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SistemKayitTarihi" ColumnName="SistemKayitTarihi" />
+          <ScalarProperty Name="KayitOlusturanUserKey" ColumnName="KayitOlusturanUserKey" />
+          <ScalarProperty Name="Ay" ColumnName="Ay" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="PrePaidToplamGross" ColumnName="PrePaidToplamGross" />
+          <ScalarProperty Name="PrePaidSesToplamNet" ColumnName="PrePaidSesToplamNet" />
+          <ScalarProperty Name="PrePaidSesToplamHedef" ColumnName="PrePaidSesToplamHedef" />
+          <ScalarProperty Name="PrePaidToplamNetHedefYuzdesi" ColumnName="PrePaidToplamNetHedefYuzdesi" />
+          <ScalarProperty Name="BireyselPostpaidToplamGross" ColumnName="BireyselPostpaidToplamGross" />
+          <ScalarProperty Name="BireyselPostpaidSesGross" ColumnName="BireyselPostpaidSesGross" />
+          <ScalarProperty Name="BireyselPostpaidSesNet" ColumnName="BireyselPostpaidSesNet" />
+          <ScalarProperty Name="BireyselPostpaidSesHedef" ColumnName="BireyselPostpaidSesHedef" />
+          <ScalarProperty Name="BireyselPostpaidSesHedefYuzdesi" ColumnName="BireyselPostpaidSesHedefYuzdesi" />
+          <ScalarProperty Name="BireyselPostpaidDataGross" ColumnName="BireyselPostpaidDataGross" />
+          <ScalarProperty Name="BireyselPostpaidDataNet" ColumnName="BireyselPostpaidDataNet" />
+          <ScalarProperty Name="BireyselPostpaidDataHedef" ColumnName="BireyselPostpaidDataHedef" />
+          <ScalarProperty Name="BireyselPostpaidDataHedefYuzdesi" ColumnName="BireyselPostpaidDataHedefYuzdesi" />
+          <ScalarProperty Name="REDBireyselAdet" ColumnName="REDBireyselAdet" />
+          <ScalarProperty Name="REDBireyselNet" ColumnName="REDBireyselNet" />
+          <ScalarProperty Name="REDBireyselHedef" ColumnName="REDBireyselHedef" />
+          <ScalarProperty Name="REDBireyselHedefYuzdesi" ColumnName="REDBireyselHedefYuzdesi" />
+          <ScalarProperty Name="KurumsalPostpaidToplam" ColumnName="KurumsalPostpaidToplam" />
+          <ScalarProperty Name="KurumsalPostpaidSesGross" ColumnName="KurumsalPostpaidSesGross" />
+          <ScalarProperty Name="KurumsalPostpaidSesNet" ColumnName="KurumsalPostpaidSesNet" />
+          <ScalarProperty Name="KurumsalPostpaidSesHedef" ColumnName="KurumsalPostpaidSesHedef" />
+          <ScalarProperty Name="KurumsalPostpaidSesHedefYuzdesi" ColumnName="KurumsalPostpaidSesHedefYuzdesi" />
+          <ScalarProperty Name="PreToPost" ColumnName="PreToPost" />
+          <ScalarProperty Name="PreToPostNet" ColumnName="PreToPostNet" />
+          <ScalarProperty Name="PreToPostHedef" ColumnName="PreToPostHedef" />
+          <ScalarProperty Name="PreToPostNetYuzdesi" ColumnName="PreToPostNetYuzdesi" />
+          <ScalarProperty Name="Genclik" ColumnName="Genclik" />
+          <ScalarProperty Name="GenclikNet" ColumnName="GenclikNet" />
+          <ScalarProperty Name="GenclikHedef" ColumnName="GenclikHedef" />
+          <ScalarProperty Name="GenclikNetYuzdesi" ColumnName="GenclikNetYuzdesi" />
+          <ScalarProperty Name="REDUpSell" ColumnName="REDUpSell" />
+          <ScalarProperty Name="REDUpSellNet" ColumnName="REDUpSellNet" />
+          <ScalarProperty Name="REDUpSellHedef" ColumnName="REDUpSellHedef" />
+          <ScalarProperty Name="REDUpSellNetYuzdesi" ColumnName="REDUpSellNetYuzdesi" />
+          <ScalarProperty Name="ToplamPrePaidBekleyen" ColumnName="ToplamPrePaidBekleyen" />
+          <ScalarProperty Name="ToplamPostPaidBekleyen" ColumnName="ToplamPostPaidBekleyen" />
+          <ScalarProperty Name="HvcAdet" ColumnName="HvcAdet" />
+          <ScalarProperty Name="HvcHedef" ColumnName="HvcHedef" />
+          <ScalarProperty Name="MassAdet" ColumnName="MassAdet" />
+          <ScalarProperty Name="MassHedef" ColumnName="MassHedef" />
+          <ScalarProperty Name="FirsatAdet" ColumnName="FirsatAdet" />
+          <ScalarProperty Name="FirsatHedef" ColumnName="FirsatHedef" />
+          <ScalarProperty Name="TabletAdet" ColumnName="TabletAdet" />
+          <ScalarProperty Name="TabletHedef" ColumnName="TabletHedef" />
+          <ScalarProperty Name="ToplamCihazAdet" ColumnName="ToplamCihazAdet" />
+          <ScalarProperty Name="ToplamCihazHedef" ColumnName="ToplamCihazHedef" />
+          <ScalarProperty Name="ToplamCihazGerceklesmeYuzdesi" ColumnName="ToplamCihazGerceklesmeYuzdesi" />
+          <ScalarProperty Name="VodemToplamAktivasyon" ColumnName="VodemToplamAktivasyon" />
+          <ScalarProperty Name="AdslOrder" ColumnName="AdslOrder" />
+          <ScalarProperty Name="AdslAktif" ColumnName="AdslAktif" />
+          <ScalarProperty Name="AdslHedef" ColumnName="AdslHedef" />
+          <ScalarProperty Name="AdslGerceklesmeYuzdesi" ColumnName="AdslGerceklesmeYuzdesi" />
+          <ScalarProperty Name="VodafonePassADET" ColumnName="VodafonePassADET" />
+          <ScalarProperty Name="VodafonePassHedef" ColumnName="VodafonePassHedef" />
+          <ScalarProperty Name="VodafonePassYuzdesi" ColumnName="VodafonePassYuzdesi" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="FILTRE1VDMKODU" ColumnName="FILTRE1VDMKODU" />
+          <ScalarProperty Name="FILTRE2BOLGEYONETICI" ColumnName="FILTRE2BOLGEYONETICI" />
+          <ScalarProperty Name="FILTRE3SATISTEMSILCI" ColumnName="FILTRE3SATISTEMSILCI" />
+          <ScalarProperty Name="FILTRE4ILCE" ColumnName="FILTRE4ILCE" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+          <ScalarProperty Name="AyAdi" ColumnName="AyAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_HedefSatisDurumuPivot" FunctionName="DMPortalModel.Store.S_HedefSatisDurumuPivot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_HedefSatisDurumuPivot_Result">
+          <ScalarProperty Name="SistemKayitTarihi" ColumnName="SistemKayitTarihi" />
+          <ScalarProperty Name="KayitOlusturanUserKey" ColumnName="KayitOlusturanUserKey" />
+          <ScalarProperty Name="Ay" ColumnName="Ay" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Gross" ColumnName="Gross" />
+          <ScalarProperty Name="Net" ColumnName="Net" />
+          <ScalarProperty Name="Hedef" ColumnName="Hedef" />
+          <ScalarProperty Name="HedefYuzdesi" ColumnName="HedefYuzdesi" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="HedefKalan" ColumnName="HedefKalan" />
+          <ScalarProperty Name="TahminiAyKapanisAdet" ColumnName="TahminiAyKapanisAdet" />
+          <ScalarProperty Name="TahminiAyKapanisYuzdesi" ColumnName="TahminiAyKapanisYuzdesi" />
+          <ScalarProperty Name="AyAdi" ColumnName="AyAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_MenuNavigation" FunctionName="DMPortalModel.Store.S_MenuNavigation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_MenuNavigation_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="NavigateURL" ColumnName="NavigateURL" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_SilverRapor_Excel" FunctionName="DMPortalModel.Store.I_SilverRapor_Excel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_SilverRapor_Excel_Result">
+          <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Bayi" FunctionName="DMPortalModel.Store.S_Bayi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Bayi_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SistemKayitTarihi" ColumnName="SistemKayitTarihi" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+          <ScalarProperty Name="BayiCariAdi" ColumnName="BayiCariAdi" />
+          <ScalarProperty Name="Grup_TipID1" ColumnName="Grup_TipID1" />
+          <ScalarProperty Name="Bolge_TipID2" ColumnName="Bolge_TipID2" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="SemtID" ColumnName="SemtID" />
+          <ScalarProperty Name="MahalleID" ColumnName="MahalleID" />
+          <ScalarProperty Name="PKID" ColumnName="PKID" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Faks" ColumnName="Faks" />
+          <ScalarProperty Name="Cep" ColumnName="Cep" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="YetkiliAdiSoyadi" ColumnName="YetkiliAdiSoyadi" />
+          <ScalarProperty Name="MusteriTemsilcisiID" ColumnName="MusteriTemsilcisiID" />
+          <ScalarProperty Name="BayiTipi_TipID3" ColumnName="BayiTipi_TipID3" />
+          <ScalarProperty Name="GrupAdi" ColumnName="GrupAdi" />
+          <ScalarProperty Name="BolgeAdi" ColumnName="BolgeAdi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+          <ScalarProperty Name="SemtAdi" ColumnName="SemtAdi" />
+          <ScalarProperty Name="MahalleAdi" ColumnName="MahalleAdi" />
+          <ScalarProperty Name="AdiSoyadi" ColumnName="AdiSoyadi" />
+          <ScalarProperty Name="BayiTipiAdi" ColumnName="BayiTipiAdi" />
+          <ScalarProperty Name="ResimAdi" ColumnName="ResimAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_BayiID" FunctionName="DMPortalModel.Store.S_BayiID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_BayiID_Result">
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_006_01_CARI_EKSTRE" FunctionName="DMPortalModel.Store.OD_SP_006_01_CARI_EKSTRE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.OD_SP_006_01_CARI_EKSTRE_Result">
+          <ScalarProperty Name="CARI_TURU" ColumnName="CARI_TURU" />
+          <ScalarProperty Name="CARI_KODU" ColumnName="CARI_KODU" />
+          <ScalarProperty Name="CARI_ADI" ColumnName="CARI_ADI" />
+          <ScalarProperty Name="MODUL" ColumnName="MODUL" />
+          <ScalarProperty Name="ISLEM_TURU" ColumnName="ISLEM_TURU" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="FISNO" ColumnName="FISNO" />
+          <ScalarProperty Name="FISI_KAYDEDEN" ColumnName="FISI_KAYDEDEN" />
+          <ScalarProperty Name="BORC" ColumnName="BORC" />
+          <ScalarProperty Name="ALACAK" ColumnName="ALACAK" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_AE_KAR" FunctionName="DMPortalModel.Store.OD_SP_AE_KAR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.OD_SP_AE_KAR_Result">
+          <ScalarProperty Name="FIRMA" ColumnName="FIRMA" />
+          <ScalarProperty Name="FISTARIHI" ColumnName="FISTARIHI" />
+          <ScalarProperty Name="STOKKODU" ColumnName="STOKKODU" />
+          <ScalarProperty Name="STOKADI" ColumnName="STOKADI" />
+          <ScalarProperty Name="OZELKOD1" ColumnName="OZELKOD1" />
+          <ScalarProperty Name="OZELKOD2" ColumnName="OZELKOD2" />
+          <ScalarProperty Name="OZELKOD3" ColumnName="OZELKOD3" />
+          <ScalarProperty Name="OZELKOD4" ColumnName="OZELKOD4" />
+          <ScalarProperty Name="SATISTUTARI" ColumnName="SATISTUTARI" />
+          <ScalarProperty Name="MALIYET" ColumnName="MALIYET" />
+          <ScalarProperty Name="SATIS_MIKTARI" ColumnName="SATIS_MIKTARI" />
+          <ScalarProperty Name="KAR" ColumnName="KAR" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_AEO_ENVANTER_006" FunctionName="DMPortalModel.Store.OD_SP_AEO_ENVANTER_006">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.OD_SP_AEO_ENVANTER_006_Result">
+          <ScalarProperty Name="MAGAZA" ColumnName="MAGAZA" />
+          <ScalarProperty Name="STOKKODU" ColumnName="STOKKODU" />
+          <ScalarProperty Name="STOKACIKLAMASI" ColumnName="STOKACIKLAMASI" />
+          <ScalarProperty Name="OZELKOD1" ColumnName="OZELKOD1" />
+          <ScalarProperty Name="OZELKOD2" ColumnName="OZELKOD2" />
+          <ScalarProperty Name="OZELKOD3" ColumnName="OZELKOD3" />
+          <ScalarProperty Name="OZELKOD4" ColumnName="OZELKOD4" />
+          <ScalarProperty Name="ORTALAMAMALIYET" ColumnName="ORTALAMAMALIYET" />
+          <ScalarProperty Name="ORTALAMAURUNDEGERI" ColumnName="ORTALAMAURUNDEGERI" />
+          <ScalarProperty Name="STOKMIKTARI" ColumnName="STOKMIKTARI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_PRONIST_006_FATURA" FunctionName="DMPortalModel.Store.OD_SP_PRONIST_006_FATURA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.OD_SP_PRONIST_006_FATURA_Result">
+          <ScalarProperty Name="CARI_HESAP_KODU" ColumnName="CARI_HESAP_KODU" />
+          <ScalarProperty Name="CARI_HESAP_ADI" ColumnName="CARI_HESAP_ADI" />
+          <ScalarProperty Name="FATURA_NO" ColumnName="FATURA_NO" />
+          <ScalarProperty Name="BELGE_NO" ColumnName="BELGE_NO" />
+          <ScalarProperty Name="ODEME_TIPI" ColumnName="ODEME_TIPI" />
+          <ScalarProperty Name="STOK_KODU" ColumnName="STOK_KODU" />
+          <ScalarProperty Name="STOK_ADI" ColumnName="STOK_ADI" />
+          <ScalarProperty Name="SERI_NO" ColumnName="SERI_NO" />
+          <ScalarProperty Name="ADET" ColumnName="ADET" />
+          <ScalarProperty Name="TOPLAM" ColumnName="TOPLAM" />
+          <ScalarProperty Name="FATURA_TARIHI" ColumnName="FATURA_TARIHI" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OD_SP_US_006_01_MALZEME_SONALIMMALIYET" FunctionName="DMPortalModel.Store.OD_SP_US_006_01_MALZEME_SONALIMMALIYET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.OD_SP_US_006_01_MALZEME_SONALIMMALIYET_Result">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ILK_GIRIS_TARIHI" ColumnName="ILK_GIRIS_TARIHI" />
+          <ScalarProperty Name="SON_GIRIS_TARIHI" ColumnName="SON_GIRIS_TARIHI" />
+          <ScalarProperty Name="SON_CIKIS_TARIHI" ColumnName="SON_CIKIS_TARIHI" />
+          <ScalarProperty Name="ILK_GIRISDEN_GUN_SAYISI" ColumnName="ILK_GIRISDEN_GUN_SAYISI" />
+          <ScalarProperty Name="SON_GIRISDEN_GUN_SAYISI" ColumnName="SON_GIRISDEN_GUN_SAYISI" />
+          <ScalarProperty Name="SON_ALIM_TUTARI" ColumnName="SON_ALIM_TUTARI" />
+          <ScalarProperty Name="GIRIS_MIKTARI" ColumnName="GIRIS_MIKTARI" />
+          <ScalarProperty Name="CIKIS_MIKTARI" ColumnName="CIKIS_MIKTARI" />
+          <ScalarProperty Name="KALAN_MIKTAR" ColumnName="KALAN_MIKTAR" />
+          <ScalarProperty Name="SON_ALIM_KALAN_MALIYET" ColumnName="SON_ALIM_KALAN_MALIYET" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AktivasyonAraRaporu" FunctionName="DMPortalModel.Store.S_AktivasyonAraRaporu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonAraRaporu_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Cihaz" ColumnName="Cihaz" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="AktivasyonTarihi" ColumnName="AktivasyonTarihi" />
+          <ScalarProperty Name="BayiiAlis" ColumnName="BayiiAlis" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+          <ScalarProperty Name="Ay" ColumnName="Ay" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_AktivasyonAraRapor_Excel" FunctionName="DMPortalModel.Store.I_AktivasyonAraRapor_Excel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_AktivasyonAraRapor_Excel_Result">
+          <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Urunler" FunctionName="DMPortalModel.Store.S_Urunler">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Urunler_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="KategoriID_TipID4" ColumnName="KategoriID_TipID4" />
+          <ScalarProperty Name="Resim" ColumnName="Resim" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="D_Duyurular" FunctionName="DMPortalModel.Store.D_Duyurular" />
+    <FunctionImportMapping FunctionImportName="I_Duyurular" FunctionName="DMPortalModel.Store.I_Duyurular" />
+    <FunctionImportMapping FunctionImportName="U_Duyurular" FunctionName="DMPortalModel.Store.U_Duyurular" />
+    <FunctionImportMapping FunctionImportName="D_DuyurularSlider" FunctionName="DMPortalModel.Store.D_DuyurularSlider" />
+    <FunctionImportMapping FunctionImportName="I_DuyurularSlider" FunctionName="DMPortalModel.Store.I_DuyurularSlider" />
+    <FunctionImportMapping FunctionImportName="S_DuyurularSlider" FunctionName="DMPortalModel.Store.S_DuyurularSlider">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_DuyurularSlider_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ResimAdi" ColumnName="ResimAdi" />
+          <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="SlideAdi" ColumnName="SlideAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="U_DuyurularSlider" FunctionName="DMPortalModel.Store.U_DuyurularSlider" />
+    <FunctionImportMapping FunctionImportName="I_TemlikRapor_Excel" FunctionName="DMPortalModel.Store.I_TemlikRapor_Excel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_TemlikRapor_Excel_Result">
+          <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_CihazTemlikRaporu" FunctionName="DMPortalModel.Store.S_CihazTemlikRaporu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_CihazTemlikRaporu_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SistemKayitTarihi" ColumnName="SistemKayitTarihi" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Cihaz" ColumnName="Cihaz" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Fatura" ColumnName="Fatura" />
+          <ScalarProperty Name="BRTemlik" ColumnName="BRTemlik" />
+          <ScalarProperty Name="BRPayi" ColumnName="BRPayi" />
+          <ScalarProperty Name="Iade" ColumnName="Iade" />
+          <ScalarProperty Name="EkPrim" ColumnName="EkPrim" />
+          <ScalarProperty Name="TemlikTutari" ColumnName="TemlikTutari" />
+          <ScalarProperty Name="Ay" ColumnName="Ay" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_PrimHakedis_Excel" FunctionName="DMPortalModel.Store.I_PrimHakedis_Excel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_PrimHakedis_Excel_Result">
+          <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_PrimHakedisRaporu" FunctionName="DMPortalModel.Store.S_PrimHakedisRaporu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_PrimHakedisRaporu_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SistemTarihSaati" ColumnName="SistemTarihSaati" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="PrePaidPrimiKDVHaric" ColumnName="PrePaidPrimiKDVHaric" />
+          <ScalarProperty Name="PostPaidPrimiKDVHaric" ColumnName="PostPaidPrimiKDVHaric" />
+          <ScalarProperty Name="WowPrimiKDVHaric" ColumnName="WowPrimiKDVHaric" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="ToplamKDVHaric" ColumnName="ToplamKDVHaric" />
+          <ScalarProperty Name="KDV" ColumnName="KDV" />
+          <ScalarProperty Name="ToplamKDVDahil" ColumnName="ToplamKDVDahil" />
+          <ScalarProperty Name="CezaSairIslem" ColumnName="CezaSairIslem" />
+          <ScalarProperty Name="MahsupSonrasiKalanTutarKDVDahil" ColumnName="MahsupSonrasiKalanTutarKDVDahil" />
+          <ScalarProperty Name="Ay" ColumnName="Ay" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_AlSatKarlilik_Excel" FunctionName="DMPortalModel.Store.I_AlSatKarlilik_Excel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_AlSatKarlilik_Excel_Result">
+          <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AlSatKarlilik" FunctionName="DMPortalModel.Store.S_AlSatKarlilik">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AlSatKarlilik_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SistemKayitTarihi" ColumnName="SistemKayitTarihi" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="GSM" ColumnName="GSM" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="BayiKazanci" ColumnName="BayiKazanci" />
+          <ScalarProperty Name="Ay" ColumnName="Ay" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="R_AktivasyonAraRaporu" FunctionName="DMPortalModel.Store.R_AktivasyonAraRaporu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.R_AktivasyonAraRaporu_Result">
+          <ScalarProperty Name="AktivasyonTarihi" ColumnName="AktivasyonTarihi" />
+          <ScalarProperty Name="BayiAdi" ColumnName="BayiAdi" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Tip" FunctionName="DMPortalModel.Store.S_Tip">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Tip_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AyiracID" ColumnName="AyiracID" />
+          <ScalarProperty Name="TipAdi" ColumnName="TipAdi" />
+          <ScalarProperty Name="TipAciklama" ColumnName="TipAciklama" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AdresIlce" FunctionName="DMPortalModel.Store.S_AdresIlce">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AdresIlce_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AdresSehir" FunctionName="DMPortalModel.Store.S_AdresSehir">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AdresSehir_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_MusteriTemsilcisi" FunctionName="DMPortalModel.Store.S_MusteriTemsilcisi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_MusteriTemsilcisi_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SistemKayitTarihi" ColumnName="SistemKayitTarihi" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AdiSoyadi" ColumnName="AdiSoyadi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_Bayi" FunctionName="DMPortalModel.Store.I_Bayi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_Bayi_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="U_Bayi" FunctionName="DMPortalModel.Store.U_Bayi" />
+    <FunctionImportMapping FunctionImportName="I_DuyurularPopup" FunctionName="DMPortalModel.Store.I_DuyurularPopup" />
+    <FunctionImportMapping FunctionImportName="S_DuyurularPopup" FunctionName="DMPortalModel.Store.S_DuyurularPopup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_DuyurularPopup_Result">
+          <ScalarProperty Name="ResimAdi" ColumnName="ResimAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_DuyurularPopupLog" FunctionName="DMPortalModel.Store.I_DuyurularPopupLog" />
+    <FunctionImportMapping FunctionImportName="S_BayiTeminat" FunctionName="DMPortalModel.Store.S_BayiTeminat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_BayiTeminat_Result">
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+          <ScalarProperty Name="Teminat" ColumnName="Teminat" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_CariTakipTeminat_Excel" FunctionName="DMPortalModel.Store.I_CariTakipTeminat_Excel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_CariTakipTeminat_Excel_Result">
+          <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_CihazTakipAraRapor" FunctionName="DMPortalModel.Store.S_CihazTakipAraRapor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_CihazTakipAraRapor_Result">
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="AktivasyonTarihi" ColumnName="AktivasyonTarihi" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="BayiKodu" ColumnName="BayiKodu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Dokumanlar" FunctionName="DMPortalModel.Store.S_Dokumanlar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Dokumanlar_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="DosyaAdi" ColumnName="DosyaAdi" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="DokumanTipi_TipID5" ColumnName="DokumanTipi_TipID5" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_Dokuman" FunctionName="DMPortalModel.Store.I_Dokuman" />
+    <FunctionImportMapping FunctionImportName="D_Dokumanlar" FunctionName="DMPortalModel.Store.D_Dokumanlar" />
+    <FunctionImportMapping FunctionImportName="I_Siparislerim" FunctionName="DMPortalModel.Store.I_Siparislerim" />
+    <FunctionImportMapping FunctionImportName="S_Siparislerim" FunctionName="DMPortalModel.Store.S_Siparislerim">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Siparislerim_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Siparisler" FunctionName="DMPortalModel.Store.S_Siparisler">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Siparisler_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="D_Siparis" FunctionName="DMPortalModel.Store.D_Siparis" />
+    <FunctionImportMapping FunctionImportName="U_Siparis" FunctionName="DMPortalModel.Store.U_Siparis" />
+    <FunctionImportMapping FunctionImportName="D_UrunTanimlari" FunctionName="DMPortalModel.Store.D_UrunTanimlari" />
+    <FunctionImportMapping FunctionImportName="I_UrunTanimlari" FunctionName="DMPortalModel.Store.I_UrunTanimlari" />
+    <FunctionImportMapping FunctionImportName="U_UrunTanimlari" FunctionName="DMPortalModel.Store.U_UrunTanimlari" />
+    <FunctionImportMapping FunctionImportName="S_MenuYetkileri" FunctionName="DMPortalModel.Store.S_MenuYetkileri">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_MenuYetkileri_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="NavigateURL" ColumnName="NavigateURL" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+          <ScalarProperty Name="MenuBayiTipi_TipID7" ColumnName="MenuBayiTipi_TipID7" />
+          <ScalarProperty Name="Checkbox" ColumnName="Checkbox" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_Aktivasyon" FunctionName="DMPortalModel.Store.I_Aktivasyon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.I_Aktivasyon_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Tarife" FunctionName="DMPortalModel.Store.S_Tarife">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Tarife_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi_TipID8" ColumnName="TarifeTipi_TipID8" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="SistemKayitTarihiSaati" ColumnName="SistemKayitTarihiSaati" />
+          <ScalarProperty Name="TipAdi" ColumnName="TipAdi" />
+          <ScalarProperty Name="TipAciklama" ColumnName="TipAciklama" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Aktivasyon" FunctionName="DMPortalModel.Store.S_Aktivasyon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Aktivasyon_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_Roles" FunctionName="DMPortalModel.Store.S_Roles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Roles_Result">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BayiTipi" ColumnName="BayiTipi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="I_MenuYetkileri" FunctionName="DMPortalModel.Store.I_MenuYetkileri" />
+    <FunctionImportMapping FunctionImportName="D_RoleMenuYetkileriSil" FunctionName="DMPortalModel.Store.D_RoleMenuYetkileriSil" />
+    <FunctionImportMapping FunctionImportName="I_AktivasyonEvrak" FunctionName="DMPortalModel.Store.I_AktivasyonEvrak" />
+    <FunctionImportMapping FunctionImportName="S_AktivasyonFaturasiz" FunctionName="DMPortalModel.Store.S_AktivasyonFaturasiz">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonFaturasiz_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AktivasyonSebekeIciGecis" FunctionName="DMPortalModel.Store.S_AktivasyonSebekeIciGecis">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonSebekeIciGecis_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AktivasyonTaahhutname" FunctionName="DMPortalModel.Store.S_AktivasyonTaahhutname">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonTaahhutname_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AktivasyonHatIptal" FunctionName="DMPortalModel.Store.S_AktivasyonHatIptal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonHatIptal_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AktivasyonVodafoneNet" FunctionName="DMPortalModel.Store.S_AktivasyonVodafoneNet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonVodafoneNet_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AktivasyonEFatura" FunctionName="DMPortalModel.Store.S_AktivasyonEFatura">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonEFatura_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+          <ScalarProperty Name="EFatura_TipID12" ColumnName="EFatura_TipID12" />
+          <ScalarProperty Name="EfaturaTipi" ColumnName="EfaturaTipi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="S_AktivasyonYonetici" FunctionName="DMPortalModel.Store.S_AktivasyonYonetici">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_AktivasyonYonetici_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BayiID" ColumnName="BayiID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="TCKN" ColumnName="TCKN" />
+          <ScalarProperty Name="AnneKizlikSoyadi" ColumnName="AnneKizlikSoyadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="SehirID" ColumnName="SehirID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="EMailAdres" ColumnName="EMailAdres" />
+          <ScalarProperty Name="IletisimTelefonu" ColumnName="IletisimTelefonu" />
+          <ScalarProperty Name="HatTelNumarasi" ColumnName="HatTelNumarasi" />
+          <ScalarProperty Name="SimkartSeriNo" ColumnName="SimkartSeriNo" />
+          <ScalarProperty Name="HatTarifeID" ColumnName="HatTarifeID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SistemKayitTarihSaati" ColumnName="SistemKayitTarihSaati" />
+          <ScalarProperty Name="Mnp" ColumnName="Mnp" />
+          <ScalarProperty Name="SimkartTipi_TipID9" ColumnName="SimkartTipi_TipID9" />
+          <ScalarProperty Name="SimkartTipi" ColumnName="SimkartTipi" />
+          <ScalarProperty Name="TarifeAdi" ColumnName="TarifeAdi" />
+          <ScalarProperty Name="TarifeTipi" ColumnName="TarifeTipi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+          <ScalarProperty Name="EFatura_TipID12" ColumnName="EFatura_TipID12" />
+          <ScalarProperty Name="EfaturaTipi" ColumnName="EfaturaTipi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="D_MusteriTemsilcisi" FunctionName="DMPortalModel.Store.D_MusteriTemsilcisi" />
+    <FunctionImportMapping FunctionImportName="I_MusteriTemsilcisi" FunctionName="DMPortalModel.Store.I_MusteriTemsilcisi" />
+    <FunctionImportMapping FunctionImportName="U_MusteriTemsilcisi" FunctionName="DMPortalModel.Store.U_MusteriTemsilcisi" />
+    <FunctionImportMapping FunctionImportName="S_Kullanici" FunctionName="DMPortalModel.Store.S_Kullanici">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Kullanici_Result">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="D_Bolge" FunctionName="DMPortalModel.Store.D_Bolge" />
+    <FunctionImportMapping FunctionImportName="I_Bolge" FunctionName="DMPortalModel.Store.I_Bolge" />
+    <FunctionImportMapping FunctionImportName="S_Bolge" FunctionName="DMPortalModel.Store.S_Bolge">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Bolge_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="U_Bolge" FunctionName="DMPortalModel.Store.U_Bolge" />
+    <FunctionImportMapping FunctionImportName="D_Grup" FunctionName="DMPortalModel.Store.D_Grup" />
+    <FunctionImportMapping FunctionImportName="I_Grup" FunctionName="DMPortalModel.Store.I_Grup" />
+    <FunctionImportMapping FunctionImportName="S_Grup" FunctionName="DMPortalModel.Store.S_Grup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DMPortalModel.S_Grup_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="U_Grup" FunctionName="DMPortalModel.Store.U_Grup" />
+    <FunctionImportMapping FunctionImportName="D_TemlikRapor_Excel" FunctionName="DMPortalModel.Store.D_TemlikRapor_Excel" />
+  </EntityContainerMapping>
+</Mapping>

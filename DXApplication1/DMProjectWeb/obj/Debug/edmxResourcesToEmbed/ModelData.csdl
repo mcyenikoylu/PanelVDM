@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DMPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DMPortalEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="aspnet_Membership_GetAllUsers">
+      <Parameter Name="ApplicationName" Mode="In" Type="String" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_Duyurularim" ReturnType="Collection(DMPortalModel.S_Duyurularim_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_HedefSatisDurumu" ReturnType="Collection(DMPortalModel.S_HedefSatisDurumu_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+      <Parameter Name="BaslangicTarihi" Mode="In" Type="DateTime" />
+      <Parameter Name="BitisTarihi" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="S_HedefSatisDurumuPivot" ReturnType="Collection(DMPortalModel.S_HedefSatisDurumuPivot_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+      <Parameter Name="BaslangicTarihi" Mode="In" Type="DateTime" />
+      <Parameter Name="BitisTarihi" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="S_MenuNavigation" ReturnType="Collection(DMPortalModel.S_MenuNavigation_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="I_SilverRapor_Excel" ReturnType="Collection(DMPortalModel.I_SilverRapor_Excel_Result)">
+      <Parameter Name="ExcelDosyaYolu" Mode="In" Type="String" />
+      <Parameter Name="UserKey" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_Bayi" ReturnType="Collection(DMPortalModel.S_Bayi_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_BayiID" ReturnType="Collection(DMPortalModel.S_BayiID_Result)">
+      <Parameter Name="BayiKodu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OD_SP_006_01_CARI_EKSTRE" ReturnType="Collection(DMPortalModel.OD_SP_006_01_CARI_EKSTRE_Result)">
+      <Parameter Name="CARI_KODU" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OD_SP_AE_KAR" ReturnType="Collection(DMPortalModel.OD_SP_AE_KAR_Result)" />
+    <FunctionImport Name="OD_SP_AEO_ENVANTER_006" ReturnType="Collection(DMPortalModel.OD_SP_AEO_ENVANTER_006_Result)" />
+    <FunctionImport Name="OD_SP_PRONIST_006_FATURA" ReturnType="Collection(DMPortalModel.OD_SP_PRONIST_006_FATURA_Result)" />
+    <FunctionImport Name="OD_SP_US_006_01_MALZEME_SONALIMMALIYET" ReturnType="Collection(DMPortalModel.OD_SP_US_006_01_MALZEME_SONALIMMALIYET_Result)" />
+    <FunctionImport Name="S_AktivasyonAraRaporu" ReturnType="Collection(DMPortalModel.S_AktivasyonAraRaporu_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_AktivasyonAraRapor_Excel" ReturnType="Collection(DMPortalModel.I_AktivasyonAraRapor_Excel_Result)">
+      <Parameter Name="ExcelDosyaYolu" Mode="In" Type="String" />
+      <Parameter Name="UserKey" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_Urunler" ReturnType="Collection(DMPortalModel.S_Urunler_Result)" />
+    <FunctionImport Name="D_Duyurular">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_Duyurular">
+      <Parameter Name="Baslik" Mode="In" Type="String" />
+      <Parameter Name="Aciklama" Mode="In" Type="String" />
+      <Parameter Name="DuyuruTarihi" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="U_Duyurular">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Baslik" Mode="In" Type="String" />
+      <Parameter Name="Aciklama" Mode="In" Type="String" />
+      <Parameter Name="DuyuruTarihi" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="D_DuyurularSlider">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_DuyurularSlider">
+      <Parameter Name="ResimAdi" Mode="In" Type="String" />
+      <Parameter Name="SiraNo" Mode="In" Type="Int32" />
+      <Parameter Name="Aktif" Mode="In" Type="Boolean" />
+      <Parameter Name="SlideAdi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="S_DuyurularSlider" ReturnType="Collection(DMPortalModel.S_DuyurularSlider_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="U_DuyurularSlider">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="ResimAdi" Mode="In" Type="String" />
+      <Parameter Name="SiraNo" Mode="In" Type="Int32" />
+      <Parameter Name="Aktif" Mode="In" Type="Boolean" />
+      <Parameter Name="SlideAdi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="I_TemlikRapor_Excel" ReturnType="Collection(DMPortalModel.I_TemlikRapor_Excel_Result)">
+      <Parameter Name="ExcelDosyaYolu" Mode="In" Type="String" />
+      <Parameter Name="UserKey" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_CihazTemlikRaporu" ReturnType="Collection(DMPortalModel.S_CihazTemlikRaporu_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_PrimHakedis_Excel" ReturnType="Collection(DMPortalModel.I_PrimHakedis_Excel_Result)">
+      <Parameter Name="ExcelDosyaYolu" Mode="In" Type="String" />
+      <Parameter Name="UserKey" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_PrimHakedisRaporu" ReturnType="Collection(DMPortalModel.S_PrimHakedisRaporu_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_AlSatKarlilik_Excel" ReturnType="Collection(DMPortalModel.I_AlSatKarlilik_Excel_Result)">
+      <Parameter Name="ExcelDosyaYolu" Mode="In" Type="String" />
+      <Parameter Name="UserKey" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_AlSatKarlilik" ReturnType="Collection(DMPortalModel.S_AlSatKarlilik_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="R_AktivasyonAraRaporu" ReturnType="Collection(DMPortalModel.R_AktivasyonAraRaporu_Result)" />
+    <FunctionImport Name="S_Tip" ReturnType="Collection(DMPortalModel.S_Tip_Result)">
+      <Parameter Name="AyiracID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AdresIlce" ReturnType="Collection(DMPortalModel.S_AdresIlce_Result)">
+      <Parameter Name="SehirID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AdresSehir" ReturnType="Collection(DMPortalModel.S_AdresSehir_Result)" />
+    <FunctionImport Name="S_MusteriTemsilcisi" ReturnType="Collection(DMPortalModel.S_MusteriTemsilcisi_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="I_Bayi" ReturnType="Collection(DMPortalModel.I_Bayi_Result)">
+      <Parameter Name="Aktif" Mode="In" Type="Boolean" />
+      <Parameter Name="BayiKodu" Mode="In" Type="String" />
+      <Parameter Name="BayiAdi" Mode="In" Type="String" />
+      <Parameter Name="BayiCariAdi" Mode="In" Type="String" />
+      <Parameter Name="Grup_TipID1" Mode="In" Type="Int32" />
+      <Parameter Name="Bolge_TipID2" Mode="In" Type="Int32" />
+      <Parameter Name="SehirID" Mode="In" Type="Int32" />
+      <Parameter Name="IlceID" Mode="In" Type="Int32" />
+      <Parameter Name="SemtID" Mode="In" Type="Int32" />
+      <Parameter Name="MahalleID" Mode="In" Type="Int32" />
+      <Parameter Name="PKID" Mode="In" Type="Int32" />
+      <Parameter Name="Adres" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="Faks" Mode="In" Type="String" />
+      <Parameter Name="Cep" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="YetkiliAdiSoyadi" Mode="In" Type="String" />
+      <Parameter Name="MusteriTemsilcisiID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiTipi_TipID3" Mode="In" Type="Int32" />
+      <Parameter Name="ResimAdi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="U_Bayi">
+      <Parameter Name="KayitID" Mode="In" Type="Int32" />
+      <Parameter Name="Aktif" Mode="In" Type="Boolean" />
+      <Parameter Name="BayiKodu" Mode="In" Type="String" />
+      <Parameter Name="BayiAdi" Mode="In" Type="String" />
+      <Parameter Name="BayiCariAdi" Mode="In" Type="String" />
+      <Parameter Name="Grup_TipID1" Mode="In" Type="Int32" />
+      <Parameter Name="Bolge_TipID2" Mode="In" Type="Int32" />
+      <Parameter Name="SehirID" Mode="In" Type="Int32" />
+      <Parameter Name="IlceID" Mode="In" Type="Int32" />
+      <Parameter Name="SemtID" Mode="In" Type="Int32" />
+      <Parameter Name="MahalleID" Mode="In" Type="Int32" />
+      <Parameter Name="PKID" Mode="In" Type="Int32" />
+      <Parameter Name="Adres" Mode="In" Type="String" />
+      <Parameter Name="Telefon" Mode="In" Type="String" />
+      <Parameter Name="Faks" Mode="In" Type="String" />
+      <Parameter Name="Cep" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="YetkiliAdiSoyadi" Mode="In" Type="String" />
+      <Parameter Name="MusteriTemsilcisiID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiTipi_TipID3" Mode="In" Type="Int32" />
+      <Parameter Name="ResimAdi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="I_DuyurularPopup">
+      <Parameter Name="ResimAdi" Mode="In" Type="String" />
+      <Parameter Name="DuyuruAdi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="S_DuyurularPopup" ReturnType="Collection(DMPortalModel.S_DuyurularPopup_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="I_DuyurularPopupLog">
+      <Parameter Name="UserId" Mode="In" Type="Guid" />
+      <Parameter Name="ResimAdi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="S_BayiTeminat" ReturnType="Collection(DMPortalModel.S_BayiTeminat_Result)" />
+    <FunctionImport Name="I_CariTakipTeminat_Excel" ReturnType="Collection(DMPortalModel.I_CariTakipTeminat_Excel_Result)">
+      <Parameter Name="ExcelDosyaYolu" Mode="In" Type="String" />
+      <Parameter Name="UserKey" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_CihazTakipAraRapor" ReturnType="Collection(DMPortalModel.S_CihazTakipAraRapor_Result)" />
+    <FunctionImport Name="S_Dokumanlar" ReturnType="Collection(DMPortalModel.S_Dokumanlar_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_Dokuman">
+      <Parameter Name="DokumanAdi" Mode="In" Type="String" />
+      <Parameter Name="DosyaAdi" Mode="In" Type="String" />
+      <Parameter Name="Aktif" Mode="In" Type="Boolean" />
+      <Parameter Name="DokumanTipi_TipID5" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="D_Dokumanlar">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_Siparislerim">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+      <Parameter Name="UrunID" Mode="In" Type="Int32" />
+      <Parameter Name="Adet" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_Siparislerim" ReturnType="Collection(DMPortalModel.S_Siparislerim_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_Siparisler" ReturnType="Collection(DMPortalModel.S_Siparisler_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="D_Siparis">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="U_Siparis">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="OnayID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="D_UrunTanimlari">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_UrunTanimlari">
+      <Parameter Name="UrunKodu" Mode="In" Type="String" />
+      <Parameter Name="UrunAdi" Mode="In" Type="String" />
+      <Parameter Name="KategoriID_TipID4" Mode="In" Type="Int32" />
+      <Parameter Name="Marka" Mode="In" Type="String" />
+      <Parameter Name="Model" Mode="In" Type="String" />
+      <Parameter Name="Fiyat" Mode="In" Type="Decimal" />
+      <Parameter Name="Resim" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="U_UrunTanimlari">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="UrunKodu" Mode="In" Type="String" />
+      <Parameter Name="UrunAdi" Mode="In" Type="String" />
+      <Parameter Name="KategoriID_TipID4" Mode="In" Type="Int32" />
+      <Parameter Name="Marka" Mode="In" Type="String" />
+      <Parameter Name="Model" Mode="In" Type="String" />
+      <Parameter Name="Fiyat" Mode="In" Type="Decimal" />
+      <Parameter Name="Resim" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="S_MenuYetkileri" ReturnType="Collection(DMPortalModel.S_MenuYetkileri_Result)">
+      <Parameter Name="SP_IslemTipi" Mode="In" Type="Int32" />
+      <Parameter Name="RoleID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="I_Aktivasyon" ReturnType="Collection(DMPortalModel.I_Aktivasyon_Result)">
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+      <Parameter Name="UserId" Mode="In" Type="Guid" />
+      <Parameter Name="Adi" Mode="In" Type="String" />
+      <Parameter Name="Soyadi" Mode="In" Type="String" />
+      <Parameter Name="TCKN" Mode="In" Type="Decimal" />
+      <Parameter Name="AnneKizlikSoyadi" Mode="In" Type="String" />
+      <Parameter Name="Adres" Mode="In" Type="String" />
+      <Parameter Name="SehirID" Mode="In" Type="Int32" />
+      <Parameter Name="IlceID" Mode="In" Type="Int32" />
+      <Parameter Name="PostaKodu" Mode="In" Type="Int32" />
+      <Parameter Name="EMailAdresi" Mode="In" Type="String" />
+      <Parameter Name="IletisimTelefonu" Mode="In" Type="String" />
+      <Parameter Name="HatTelNumarasi" Mode="In" Type="String" />
+      <Parameter Name="SimkartSeriNo" Mode="In" Type="String" />
+      <Parameter Name="HatTarifeID" Mode="In" Type="Int32" />
+      <Parameter Name="Aciklama" Mode="In" Type="String" />
+      <Parameter Name="Mnp" Mode="In" Type="Boolean" />
+      <Parameter Name="SimkartTipi_TipID9" Mode="In" Type="Int32" />
+      <Parameter Name="EFatura_TipID12" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_Tarife" ReturnType="Collection(DMPortalModel.S_Tarife_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_Aktivasyon" ReturnType="Collection(DMPortalModel.S_Aktivasyon_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_Roles" ReturnType="Collection(DMPortalModel.S_Roles_Result)" />
+    <FunctionImport Name="I_MenuYetkileri">
+      <Parameter Name="MenuID" Mode="In" Type="Int32" />
+      <Parameter Name="RoleID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="D_RoleMenuYetkileriSil">
+      <Parameter Name="RoleId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="I_AktivasyonEvrak">
+      <Parameter Name="DosyaAdi" Mode="In" Type="String" />
+      <Parameter Name="DosyaTipi" Mode="In" Type="Int32" />
+      <Parameter Name="EvrakTipi" Mode="In" Type="Int32" />
+      <Parameter Name="AktivasyonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AktivasyonFaturasiz" ReturnType="Collection(DMPortalModel.S_AktivasyonFaturasiz_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AktivasyonSebekeIciGecis" ReturnType="Collection(DMPortalModel.S_AktivasyonSebekeIciGecis_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AktivasyonTaahhutname" ReturnType="Collection(DMPortalModel.S_AktivasyonTaahhutname_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AktivasyonHatIptal" ReturnType="Collection(DMPortalModel.S_AktivasyonHatIptal_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AktivasyonVodafoneNet" ReturnType="Collection(DMPortalModel.S_AktivasyonVodafoneNet_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AktivasyonEFatura" ReturnType="Collection(DMPortalModel.S_AktivasyonEFatura_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="BayiID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="S_AktivasyonYonetici" ReturnType="Collection(DMPortalModel.S_AktivasyonYonetici_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="D_MusteriTemsilcisi">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_MusteriTemsilcisi">
+      <Parameter Name="AdiSoyadi" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="U_MusteriTemsilcisi">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="AdiSoyadi" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="S_Kullanici" ReturnType="Collection(DMPortalModel.S_Kullanici_Result)" />
+    <FunctionImport Name="D_Bolge">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_Bolge">
+      <Parameter Name="Adi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="S_Bolge" ReturnType="Collection(DMPortalModel.S_Bolge_Result)" />
+    <FunctionImport Name="U_Bolge">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Adi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="D_Grup">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="I_Grup">
+      <Parameter Name="Adi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="S_Grup" ReturnType="Collection(DMPortalModel.S_Grup_Result)" />
+    <FunctionImport Name="U_Grup">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Adi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="D_TemlikRapor_Excel">
+      <Parameter Name="Ay" Mode="In" Type="Int32" />
+      <Parameter Name="Yil" Mode="In" Type="Int32" />
+      <Parameter Name="ExcelDosyaYolu" Mode="In" Type="String" />
+      <Parameter Name="UserKey" Mode="In" Type="Guid" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="S_Duyurularim_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Baslik" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="2000" />
+    <Property Type="DateTime" Name="DuyuruTarihi" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="SistemKayitTarihi" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="S_HedefSatisDurumu_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="SistemKayitTarihi" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="KayitOlusturanUserKey" Nullable="true" />
+    <Property Type="Double" Name="Ay" Nullable="true" />
+    <Property Type="Double" Name="Yil" Nullable="true" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="Double" Name="PrePaidToplamGross" Nullable="true" />
+    <Property Type="Double" Name="PrePaidSesToplamNet" Nullable="true" />
+    <Property Type="Double" Name="PrePaidSesToplamHedef" Nullable="true" />
+    <Property Type="Double" Name="PrePaidToplamNetHedefYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidToplamGross" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidSesGross" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidSesNet" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidSesHedef" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidSesHedefYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidDataGross" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidDataNet" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidDataHedef" Nullable="true" />
+    <Property Type="Double" Name="BireyselPostpaidDataHedefYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="REDBireyselAdet" Nullable="true" />
+    <Property Type="Double" Name="REDBireyselNet" Nullable="true" />
+    <Property Type="Double" Name="REDBireyselHedef" Nullable="true" />
+    <Property Type="Double" Name="REDBireyselHedefYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="KurumsalPostpaidToplam" Nullable="true" />
+    <Property Type="Double" Name="KurumsalPostpaidSesGross" Nullable="true" />
+    <Property Type="Double" Name="KurumsalPostpaidSesNet" Nullable="true" />
+    <Property Type="Double" Name="KurumsalPostpaidSesHedef" Nullable="true" />
+    <Property Type="Double" Name="KurumsalPostpaidSesHedefYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="PreToPost" Nullable="true" />
+    <Property Type="Double" Name="PreToPostNet" Nullable="true" />
+    <Property Type="Double" Name="PreToPostHedef" Nullable="true" />
+    <Property Type="Double" Name="PreToPostNetYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="Genclik" Nullable="true" />
+    <Property Type="Double" Name="GenclikNet" Nullable="true" />
+    <Property Type="Double" Name="GenclikHedef" Nullable="true" />
+    <Property Type="Double" Name="GenclikNetYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="REDUpSell" Nullable="true" />
+    <Property Type="Double" Name="REDUpSellNet" Nullable="true" />
+    <Property Type="Double" Name="REDUpSellHedef" Nullable="true" />
+    <Property Type="Double" Name="REDUpSellNetYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="ToplamPrePaidBekleyen" Nullable="true" />
+    <Property Type="Double" Name="ToplamPostPaidBekleyen" Nullable="true" />
+    <Property Type="Double" Name="HvcAdet" Nullable="true" />
+    <Property Type="Double" Name="HvcHedef" Nullable="true" />
+    <Property Type="Double" Name="MassAdet" Nullable="true" />
+    <Property Type="Double" Name="MassHedef" Nullable="true" />
+    <Property Type="Double" Name="FirsatAdet" Nullable="true" />
+    <Property Type="Double" Name="FirsatHedef" Nullable="true" />
+    <Property Type="Double" Name="TabletAdet" Nullable="true" />
+    <Property Type="Double" Name="TabletHedef" Nullable="true" />
+    <Property Type="Double" Name="ToplamCihazAdet" Nullable="true" />
+    <Property Type="Double" Name="ToplamCihazHedef" Nullable="true" />
+    <Property Type="Double" Name="ToplamCihazGerceklesmeYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="VodemToplamAktivasyon" Nullable="true" />
+    <Property Type="Double" Name="AdslOrder" Nullable="true" />
+    <Property Type="Double" Name="AdslAktif" Nullable="true" />
+    <Property Type="Double" Name="AdslHedef" Nullable="true" />
+    <Property Type="Double" Name="AdslGerceklesmeYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="VodafonePassADET" Nullable="true" />
+    <Property Type="Double" Name="VodafonePassHedef" Nullable="true" />
+    <Property Type="Double" Name="VodafonePassYuzdesi" Nullable="true" />
+    <Property Type="Double" Name="Extra4" Nullable="true" />
+    <Property Type="String" Name="FILTRE1VDMKODU" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FILTRE2BOLGEYONETICI" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FILTRE3SATISTEMSILCI" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FILTRE4ILCE" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AyAdi" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="S_HedefSatisDurumuPivot_Result">
+    <Property Type="DateTime" Name="SistemKayitTarihi" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="KayitOlusturanUserKey" Nullable="true" />
+    <Property Type="Double" Name="Ay" Nullable="true" />
+    <Property Type="Double" Name="Yil" Nullable="true" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="Double" Name="Gross" Nullable="true" />
+    <Property Type="Double" Name="Net" Nullable="true" />
+    <Property Type="Double" Name="Hedef" Nullable="true" />
+    <Property Type="Double" Name="HedefYuzdesi" Nullable="true" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="22" />
+    <Property Type="Double" Name="HedefKalan" Nullable="true" />
+    <Property Type="Int32" Name="TahminiAyKapanisAdet" Nullable="false" />
+    <Property Type="Int32" Name="TahminiAyKapanisYuzdesi" Nullable="false" />
+    <Property Type="String" Name="AyAdi" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="S_MenuNavigation_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="String" Name="Text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NavigateURL" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ImageURL" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Roles" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SiraNo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="I_SilverRapor_Excel_Result">
+    <Property Type="Int32" Name="Sonuc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="S_Bayi_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="SistemKayitTarihi" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Aktif" Nullable="true" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="BayiCariAdi" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="Grup_TipID1" Nullable="true" />
+    <Property Type="Int32" Name="Bolge_TipID2" Nullable="true" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="SemtID" Nullable="true" />
+    <Property Type="Int32" Name="MahalleID" Nullable="true" />
+    <Property Type="Int32" Name="PKID" Nullable="true" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Telefon" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Faks" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Cep" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Mail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="YetkiliAdiSoyadi" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="MusteriTemsilcisiID" Nullable="true" />
+    <Property Type="Int32" Name="BayiTipi_TipID3" Nullable="true" />
+    <Property Type="String" Name="GrupAdi" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BolgeAdi" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="SemtAdi" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="MahalleAdi" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="AdiSoyadi" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BayiTipiAdi" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ResimAdi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="S_BayiID_Result">
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_006_01_CARI_EKSTRE_Result">
+    <Property Type="String" Name="CARI_TURU" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="CARI_KODU" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="CARI_ADI" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="MODUL" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="ISLEM_TURU" Nullable="false" MaxLength="41" />
+    <Property Type="DateTime" Name="TARIH" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FISNO" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="FISI_KAYDEDEN" Nullable="true" MaxLength="21" />
+    <Property Type="Double" Name="BORC" Nullable="true" />
+    <Property Type="Double" Name="ALACAK" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_AE_KAR_Result">
+    <Property Type="String" Name="FIRMA" Nullable="true" MaxLength="61" />
+    <Property Type="DateTime" Name="FISTARIHI" Nullable="true" Precision="23" />
+    <Property Type="String" Name="STOKKODU" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="STOKADI" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="OZELKOD1" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD2" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD3" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD4" Nullable="true" MaxLength="11" />
+    <Property Type="Double" Name="SATISTUTARI" Nullable="true" />
+    <Property Type="Double" Name="MALIYET" Nullable="true" />
+    <Property Type="Double" Name="SATIS_MIKTARI" Nullable="true" />
+    <Property Type="Double" Name="KAR" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_AEO_ENVANTER_006_Result">
+    <Property Type="String" Name="MAGAZA" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="STOKKODU" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="STOKACIKLAMASI" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="OZELKOD1" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD2" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD3" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD4" Nullable="true" MaxLength="11" />
+    <Property Type="Double" Name="ORTALAMAMALIYET" Nullable="true" />
+    <Property Type="Double" Name="ORTALAMAURUNDEGERI" Nullable="true" />
+    <Property Type="Double" Name="STOKMIKTARI" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_PRONIST_006_FATURA_Result">
+    <Property Type="String" Name="CARI_HESAP_KODU" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="CARI_HESAP_ADI" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="FATURA_NO" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="BELGE_NO" Nullable="true" MaxLength="33" />
+    <Property Type="String" Name="ODEME_TIPI" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="STOK_KODU" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="STOK_ADI" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="SERI_NO" Nullable="true" MaxLength="101" />
+    <Property Type="Double" Name="ADET" Nullable="true" />
+    <Property Type="Double" Name="TOPLAM" Nullable="true" />
+    <Property Type="DateTime" Name="FATURA_TARIHI" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_US_006_01_MALZEME_SONALIMMALIYET_Result">
+    <Property Type="String" Name="CODE" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="51" />
+    <Property Type="DateTime" Name="ILK_GIRIS_TARIHI" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="SON_GIRIS_TARIHI" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="SON_CIKIS_TARIHI" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ILK_GIRISDEN_GUN_SAYISI" Nullable="true" />
+    <Property Type="Int32" Name="SON_GIRISDEN_GUN_SAYISI" Nullable="true" />
+    <Property Type="Double" Name="SON_ALIM_TUTARI" Nullable="false" />
+    <Property Type="Double" Name="GIRIS_MIKTARI" Nullable="false" />
+    <Property Type="Double" Name="CIKIS_MIKTARI" Nullable="false" />
+    <Property Type="Double" Name="KALAN_MIKTAR" Nullable="false" />
+    <Property Type="Double" Name="SON_ALIM_KALAN_MALIYET" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonAraRaporu_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Cihaz" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="IMEI" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="AktivasyonTarihi" Nullable="true" />
+    <Property Type="Double" Name="BayiiAlis" Nullable="true" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="150" />
+    <Property Type="Double" Name="Ay" Nullable="true" />
+    <Property Type="Double" Name="Yil" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="I_AktivasyonAraRapor_Excel_Result">
+    <Property Type="Int32" Name="Sonuc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="S_Urunler_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="UrunAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UrunKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Marka" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Model" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="KategoriID_TipID4" Nullable="true" />
+    <Property Type="String" Name="Resim" Nullable="true" MaxLength="523" />
+    <Property Type="Decimal" Name="Fiyat" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="S_DuyurularSlider_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ResimAdi" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="SiraNo" Nullable="true" />
+    <Property Type="Boolean" Name="Aktif" Nullable="true" />
+    <Property Type="String" Name="SlideAdi" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="I_TemlikRapor_Excel_Result">
+    <Property Type="Int32" Name="Sonuc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="S_CihazTemlikRaporu_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="SistemKayitTarihi" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Cihaz" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="IMEI" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="Tarih" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="Fatura" Nullable="true" />
+    <Property Type="Double" Name="BRTemlik" Nullable="true" />
+    <Property Type="Double" Name="BRPayi" Nullable="true" />
+    <Property Type="Double" Name="Iade" Nullable="true" />
+    <Property Type="Double" Name="EkPrim" Nullable="true" />
+    <Property Type="Double" Name="TemlikTutari" Nullable="true" />
+    <Property Type="Double" Name="Ay" Nullable="true" />
+    <Property Type="Double" Name="Yil" Nullable="true" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_PrimHakedisRaporu_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="SistemTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="Double" Name="PrePaidPrimiKDVHaric" Nullable="true" />
+    <Property Type="Double" Name="PostPaidPrimiKDVHaric" Nullable="true" />
+    <Property Type="Double" Name="WowPrimiKDVHaric" Nullable="true" />
+    <Property Type="Double" Name="Extra1" Nullable="true" />
+    <Property Type="Double" Name="Extra2" Nullable="true" />
+    <Property Type="Double" Name="Extra3" Nullable="true" />
+    <Property Type="Double" Name="Extra4" Nullable="true" />
+    <Property Type="Double" Name="Extra5" Nullable="true" />
+    <Property Type="Double" Name="Extra6" Nullable="true" />
+    <Property Type="Double" Name="ToplamKDVHaric" Nullable="true" />
+    <Property Type="Double" Name="KDV" Nullable="true" />
+    <Property Type="Double" Name="ToplamKDVDahil" Nullable="true" />
+    <Property Type="Double" Name="CezaSairIslem" Nullable="true" />
+    <Property Type="Double" Name="MahsupSonrasiKalanTutarKDVDahil" Nullable="true" />
+    <Property Type="Double" Name="Ay" Nullable="true" />
+    <Property Type="Double" Name="Yil" Nullable="true" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="I_PrimHakedis_Excel_Result">
+    <Property Type="Int32" Name="Sonuc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="S_AlSatKarlilik_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="SistemKayitTarihi" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="GSM" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="IMEI" Nullable="true" />
+    <Property Type="DateTime" Name="Tarih" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="BayiKazanci" Nullable="true" />
+    <Property Type="Double" Name="Ay" Nullable="true" />
+    <Property Type="Double" Name="Yil" Nullable="true" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="I_AlSatKarlilik_Excel_Result">
+    <Property Type="Int32" Name="Sonuc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="R_AktivasyonAraRaporu_Result">
+    <Property Type="DateTime" Name="AktivasyonTarihi" Nullable="true" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="Adet" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="S_Tip_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="AyiracID" Nullable="true" />
+    <Property Type="String" Name="TipAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TipAciklama" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="S_AdresIlce_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_AdresSehir_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_MusteriTemsilcisi_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="SistemKayitTarihi" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Aktif" Nullable="true" />
+    <Property Type="Guid" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="AdiSoyadi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="S_DuyurularPopup_Result">
+    <Property Type="String" Name="ResimAdi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="S_BayiTeminat_Result">
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Teminat" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="I_CariTakipTeminat_Excel_Result">
+    <Property Type="Int32" Name="Sonuc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="S_CihazTakipAraRapor_Result">
+    <Property Type="Double" Name="IMEI" Nullable="true" />
+    <Property Type="DateTime" Name="AktivasyonTarihi" Nullable="true" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="BayiKodu" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="S_Dokumanlar_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="DokumanAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DosyaAdi" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Aktif" Nullable="true" />
+    <Property Type="Int32" Name="DokumanTipi_TipID5" Nullable="true" />
+    <Property Type="DateTime" Name="Tarih" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="S_Siparislerim_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="Int32" Name="Adet" Nullable="true" />
+    <Property Type="Int32" Name="UrunID" Nullable="true" />
+    <Property Type="Int32" Name="Onay" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="S_Siparisler_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="Int32" Name="Adet" Nullable="true" />
+    <Property Type="Int32" Name="UrunID" Nullable="true" />
+    <Property Type="Int32" Name="Onay" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="S_MenuYetkileri_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="String" Name="Text" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NavigateURL" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ImageURL" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Roles" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SiraNo" Nullable="true" />
+    <Property Type="Int32" Name="MenuBayiTipi_TipID7" Nullable="true" />
+    <Property Type="Boolean" Name="Checkbox" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="S_Tarife_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="TarifeTipi_TipID8" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="Aktif" Nullable="true" />
+    <Property Type="DateTime" Name="SistemKayitTarihiSaati" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TipAdi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TipAciklama" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="I_Aktivasyon_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="S_Aktivasyon_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_Roles_Result">
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="BayiTipi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonFaturasiz_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonSebekeIciGecis_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonTaahhutname_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonHatIptal_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonVodafoneNet_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonEFatura_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EFatura_TipID12" Nullable="true" />
+    <Property Type="String" Name="EfaturaTipi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="S_AktivasyonYonetici_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="BayiID" Nullable="true" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Soyadi" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TCKN" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AnneKizlikSoyadi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Adres" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="SehirID" Nullable="true" />
+    <Property Type="Int32" Name="IlceID" Nullable="true" />
+    <Property Type="Int32" Name="PostaKodu" Nullable="true" />
+    <Property Type="String" Name="EMailAdres" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IletisimTelefonu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HatTelNumarasi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SimkartSeriNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="HatTarifeID" Nullable="true" />
+    <Property Type="String" Name="Aciklama" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="SistemKayitTarihSaati" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Mnp" Nullable="true" />
+    <Property Type="Int32" Name="SimkartTipi_TipID9" Nullable="true" />
+    <Property Type="String" Name="SimkartTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TarifeAdi" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="TarifeTipi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SehirAdi" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="IlceAdi" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="EFatura_TipID12" Nullable="true" />
+    <Property Type="String" Name="EfaturaTipi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="I_Bayi_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="S_Kullanici_Result">
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="MobileAlias" Nullable="true" MaxLength="16" />
+    <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+    <Property Type="DateTime" Name="LastActivityDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="S_Bolge_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="S_Grup_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

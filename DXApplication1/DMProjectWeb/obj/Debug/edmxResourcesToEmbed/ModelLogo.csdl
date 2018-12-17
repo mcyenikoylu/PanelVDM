@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TIGER2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TIGER2Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="OD_SP_006_01_CARI_EKSTRE" ReturnType="Collection(TIGER2Model.OD_SP_006_01_CARI_EKSTRE_Result)">
+      <Parameter Name="CARI_KODU" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OD_SP_BayiBakiye" ReturnType="Collection(TIGER2Model.OD_SP_BayiBakiye_Result)">
+      <Parameter Name="BayiKodu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OD_SP_AE_KAR" ReturnType="Collection(TIGER2Model.OD_SP_AE_KAR_Result)" />
+    <FunctionImport Name="OD_SP_AEO_ENVANTER_006" ReturnType="Collection(TIGER2Model.OD_SP_AEO_ENVANTER_006_Result)" />
+    <FunctionImport Name="OD_SP_CihazTakip" ReturnType="Collection(TIGER2Model.OD_SP_CihazTakip_Result)">
+      <Parameter Name="AramaKelimesi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OD_SP_PRONIST_006_FATURA" ReturnType="Collection(TIGER2Model.OD_SP_PRONIST_006_FATURA_Result)" />
+    <FunctionImport Name="OD_SP_US_006_01_MALZEME_SONALIMMALIYET" ReturnType="Collection(TIGER2Model.OD_SP_US_006_01_MALZEME_SONALIMMALIYET_Result)" />
+  </EntityContainer>
+  <ComplexType Name="OD_SP_006_01_CARI_EKSTRE_Result">
+    <Property Type="String" Name="CARI_TURU" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="CARI_KODU" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="CARI_ADI" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="MODUL" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="ISLEM_TURU" Nullable="false" MaxLength="41" />
+    <Property Type="DateTime" Name="TARIH" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FISNO" Nullable="true" MaxLength="17" />
+    <Property Type="Double" Name="BORC" Nullable="true" />
+    <Property Type="Double" Name="ALACAK" Nullable="true" />
+    <Property Type="String" Name="FISI_KAYDEDEN" Nullable="true" MaxLength="21" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_BayiBakiye_Result">
+    <Property Type="Double" Name="Bakiye" Nullable="true" />
+    <Property Type="String" Name="BayiAdi" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="CODE" Nullable="true" MaxLength="17" />
+    <Property Type="Double" Name="Alacak" Nullable="true" />
+    <Property Type="Double" Name="Borc" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_AE_KAR_Result">
+    <Property Type="String" Name="FIRMA" Nullable="true" MaxLength="61" />
+    <Property Type="DateTime" Name="FISTARIHI" Nullable="true" Precision="23" />
+    <Property Type="String" Name="STOKKODU" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="STOKADI" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="OZELKOD1" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD2" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD3" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD4" Nullable="true" MaxLength="11" />
+    <Property Type="Double" Name="SATISTUTARI" Nullable="true" />
+    <Property Type="Double" Name="MALIYET" Nullable="true" />
+    <Property Type="Double" Name="SATIS_MIKTARI" Nullable="true" />
+    <Property Type="Double" Name="KAR" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_AEO_ENVANTER_006_Result">
+    <Property Type="String" Name="MAGAZA" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="STOKKODU" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="STOKACIKLAMASI" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="OZELKOD1" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD2" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD3" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="OZELKOD4" Nullable="true" MaxLength="11" />
+    <Property Type="Double" Name="ORTALAMAMALIYET" Nullable="true" />
+    <Property Type="Double" Name="ORTALAMAURUNDEGERI" Nullable="true" />
+    <Property Type="Double" Name="STOKMIKTARI" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_CihazTakip_Result">
+    <Property Type="String" Name="FIRMA_ISMI" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="FATURA_NO" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="STOK_KODU" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="STOK_ACIKLAMASI" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="IMEI" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="FATURA_TAR" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="FATURA_NET_TUTARI" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_PRONIST_006_FATURA_Result">
+    <Property Type="String" Name="CARI_HESAP_KODU" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="CARI_HESAP_ADI" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="FATURA_NO" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="BELGE_NO" Nullable="true" MaxLength="33" />
+    <Property Type="DateTime" Name="FATURA_TARIHI" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ODEME_TIPI" Nullable="true" MaxLength="201" />
+    <Property Type="String" Name="STOK_KODU" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="STOK_ADI" Nullable="true" MaxLength="51" />
+    <Property Type="String" Name="SERI_NO" Nullable="true" MaxLength="101" />
+    <Property Type="Double" Name="ADET" Nullable="true" />
+    <Property Type="Double" Name="TOPLAM" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OD_SP_US_006_01_MALZEME_SONALIMMALIYET_Result">
+    <Property Type="String" Name="CODE" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="51" />
+    <Property Type="DateTime" Name="ILK_GIRIS_TARIHI" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="SON_GIRIS_TARIHI" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="SON_CIKIS_TARIHI" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ILK_GIRISDEN_GUN_SAYISI" Nullable="true" />
+    <Property Type="Int32" Name="SON_GIRISDEN_GUN_SAYISI" Nullable="true" />
+    <Property Type="Double" Name="SON_ALIM_TUTARI" Nullable="false" />
+    <Property Type="Double" Name="GIRIS_MIKTARI" Nullable="false" />
+    <Property Type="Double" Name="CIKIS_MIKTARI" Nullable="false" />
+    <Property Type="Double" Name="KALAN_MIKTAR" Nullable="false" />
+    <Property Type="Double" Name="SON_ALIM_KALAN_MALIYET" Nullable="false" />
+  </ComplexType>
+</Schema>

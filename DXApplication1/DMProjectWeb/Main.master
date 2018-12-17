@@ -1,0 +1,166 @@
+<%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="DMProjectWeb.MainMaster" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="RootPlaceHolder" runat="server">
+    <div class="mainSplitterContainer">
+        <dx:ASPxPanel ID="LeftPanel" runat="server" FixedPosition="WindowLeft" Collapsible="true" BackColor="#E8E9ED"
+            CssClass="logoPane">
+            <SettingsAdaptivity CollapseAtWindowInnerWidth="900" />
+            <Styles>
+                <Panel>
+                    <Border BorderStyle="None" BorderWidth="0" />
+                </Panel>
+            </Styles>
+            <PanelCollection>
+                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                    <dx:ASPxImage ID="MainLogo" ClientInstanceName="MainLogo" runat="server" ShowLoadingImage="true" ImageUrl="~/Content/Images/logo.png">
+                      
+                    </dx:ASPxImage>
+                      <%--onmouseover="this.src='Content/Images/logo.png'"
+                        onmouseout="this.src='Content/Images/logo.png'" Cursor="pointer">--%>
+                        <%--<ClientSideEvents Click="function(s, e) { 
+                                    OnImageClick(s,e);
+                            }"></ClientSideEvents>--%>
+                    <dx:ASPxMenu ID="NavigationMenu" runat="server" CssClass="navigationMenu" ShowPopOutImages="True">
+                        <Items>
+                            <dx:MenuItem Text="">
+                                <Items>
+                                </Items>
+                            </dx:MenuItem>
+                        </Items>
+                    </dx:ASPxMenu>
+                    <dx:ASPxNavBar ID="NavigationBarMenu" ClientInstanceName="navigationBarMenu" runat="server"
+                        AllowExpanding="False" ShowExpandButtons="False" AllowSelectItem="True" Width="100%">
+                    </dx:ASPxNavBar>
+                    <footer style="position: absolute;right: 0;bottom: 0;left: 0;padding: 15px;">
+                    <dx:ASPxImage ID="logoMusteri" runat="server" ImageUrl="~/Content/Images/PamukLogoFooter.png"></dx:ASPxImage>
+                    </footer>
+                </dx:PanelContent>
+            </PanelCollection>
+        </dx:ASPxPanel>
+        <dx:ASPxSplitter ID="Splitter" runat="server" FullscreenMode="True" Height="100%" Orientation="Vertical" Width="100%" AllowResize="False" EnableHierarchyRecreation="false"
+            SeparatorVisible="False" CssClass="mainSplitter" ClientInstanceName="splitter">
+            <Panes>
+                <dx:SplitterPane>
+                    <Panes>
+                        <dx:SplitterPane MinSize="300px">
+                            <Panes>
+                                <%--GRÝD ÜZERÝ MENÜ--%>
+                                <dx:SplitterPane Size="60px" PaneStyle-CssClass="toolbarPane">
+                                    <ContentCollection>
+                                        <dx:SplitterContentControl runat="server">
+                                            <dx:ASPxMenu ID="ToolbarMenu" runat="server" ClientInstanceName="toolbarMenu" ShowAsToolbar="True" AutoPostBack="false" DataSourceID="ToolbarMenuDataSource">
+                                                <ClientSideEvents ItemClick="DevAV.ToolbarMenu_ItemClick" />
+                                            </dx:ASPxMenu>
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder_ToolbarMenu" runat="server"></asp:ContentPlaceHolder>
+                                            <div class="loginControl">
+                                                <asp:Label ID="lblHosgeldin" runat="server"></asp:Label>
+                                                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                                    <LoggedInTemplate>
+                                                        <span class="bold">
+                                                            <%--<asp:LoginName ID="HeadLoginName" runat="server" />--%>
+                                                        </span>
+                                                        [
+                                        <asp:LoginStatus ID="HeadLoginStatus" runat="server"
+                                            LogoutAction="Redirect" LogoutText="Çýkýþ Yap" OnLoggedOut="HeadLoginStatus_LoggedOut"
+                                            LogoutPageUrl="~/" />
+                                                        ]
+                                                    </LoggedInTemplate>
+                                                </asp:LoginView>
+                                            </div>
+                                        </dx:SplitterContentControl>
+                                    </ContentCollection>
+                                </dx:SplitterPane>
+                                <%--GRÝD ÜZERÝ MENÜ--%>
+                                <%--GRÝD--%>
+                                <dx:SplitterPane Name="MainContentPane" ScrollBars="None" PaneStyle-CssClass="mainContentPane">
+                                    <ContentCollection>
+                                        <dx:SplitterContentControl ID="SplitterContentControl2" runat="server">
+                                            <dx:ASPxCallbackPanel ID="MainCallbackPanel" runat="server"
+                                                ClientInstanceName="mainCallbackPanel"
+                                                OnCallback="MainCallbackPanel_Callback"
+                                                CssClass="mainCallbackPanel">
+                                                <PanelCollection>
+                                                    <dx:PanelContent>
+                                                        <dx:ASPxHiddenField ID="HiddenField" runat="server" ClientInstanceName="hiddenField" OnInit="HiddenField_Init" />
+                                                        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+
+                                                        <%--<dx:ASPxPopupControl ID="FilterPopup" runat="server" ClientInstanceName="filterPopup" Width="450px" PopupHorizontalAlign="WindowCenter" PopupAnimationType="Fade"
+                                                        PopupVerticalAlign="WindowCenter" AllowDragging="True" CssClass="filterPopup" ShowCloseButton="false" HeaderText="Create Custom Filter" CloseAction="None" CloseOnEscape="true" Modal="true">
+                                                        <ContentCollection>
+                                                            <dx:PopupControlContentControl runat="server">
+                                                                <dx:ASPxFilterControl ID="FilterControl" ClientInstanceName="filterControl" CssClass="filterControl" runat="server" Width="100%" Height="150px">
+                                                                    <ClientSideEvents Applied="DevAV.FilterControl_Applied" />
+                                                                </dx:ASPxFilterControl>
+                                                               
+                                                                <dx:ASPxCheckBox ID="SaveCustomFilterCheckBox" ClientInstanceName="saveCustomFilterCheckBox" runat="server" CheckState="Unchecked" Text="Save for future use">
+                                                                    <ClientSideEvents CheckedChanged="DevAV.SaveCustomFilterCheckBox_CheckedChanged" />
+                                                                </dx:ASPxCheckBox>
+                                                                <dx:ASPxTextBox ID="CustomFilterTextBox" ClientInstanceName="customFilterTextBox" runat="server" NullText="Enter a name for your custom filter..." Width="100%" MaxLength="50" OnLoad="CustomFilterTextBox_Load">
+                                                                    <ValidationSettings ErrorDisplayMode="None" />
+                                                                    <ClientSideEvents Validation="DevAV.CustomFilterTextBox_Validation" />
+                                                                </dx:ASPxTextBox>
+                                                                <dx:ASPxButton ID="CancelFilterButton" runat="server" AutoPostBack="False" UseSubmitBehavior="False" Text="Cancel">
+                                                                    <ClientSideEvents Click="DevAV.CancelFilterButton_Click" />
+                                                                </dx:ASPxButton>
+                                                                <dx:ASPxButton ID="SaveFilterButton" runat="server" AutoPostBack="False" UseSubmitBehavior="False" Text="OK" Width="82" OnClick="SaveFilterButton_Click">
+                                                                    <ClientSideEvents Click="DevAV.SaveFilterButton_Click" />
+                                                                </dx:ASPxButton>
+                                                            </dx:PopupControlContentControl>
+                                                        </ContentCollection>
+                                                    </dx:ASPxPopupControl>--%>
+                                                    </dx:PanelContent>
+                                                </PanelCollection>
+                                                <ClientSideEvents EndCallback="DevAV.MainCallbackPanel_EndCallback" />
+                                                <%-- javascript hatasý veriyor --%>
+                                            </dx:ASPxCallbackPanel>
+                                        </dx:SplitterContentControl>
+                                    </ContentCollection>
+                                </dx:SplitterPane>
+                            </Panes>
+                        </dx:SplitterPane>
+                    </Panes>
+                </dx:SplitterPane>
+                <%--FOOTER--%>
+<%--                <dx:SplitterPane Size="20px">
+                    <Panes>
+                        <dx:SplitterPane PaneStyle-CssClass="footerTextPane">
+                            <ContentCollection>
+                                <dx:SplitterContentControl ID="SplitterContentControl6" runat="server">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                                        <div>
+                                            Ofis Danýþmanlýk, Telekomünikasyon Sistemleri
+                                        </div>
+                                    </asp:ContentPlaceHolder>
+                                </dx:SplitterContentControl>
+                            </ContentCollection>
+                        </dx:SplitterPane>
+                    </Panes>
+                </dx:SplitterPane>--%>
+                            <dx:SplitterPane Size="90px">
+                <Panes>
+
+                    <dx:SplitterPane PaneStyle-CssClass="footerTextPane">
+                        <ContentCollection>
+                            <dx:SplitterContentControl ID="SplitterContentControl6" runat="server">
+                                
+                                        <div>
+                                        Pamuk Telekomünikasyon <br />
+                                        <a href="http://www.pamuktelekomvdm.com/" target="_blank">Vodafone Daðýtým Merkezi</a>
+                                    </div>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </dx:SplitterContentControl>
+                        </ContentCollection>
+                    </dx:SplitterPane>
+                </Panes>
+            </dx:SplitterPane>
+                <%--FOOTER--%>
+            </Panes>
+            <ClientSideEvents PaneResized="DevAV.Splitter_PaneResized" />
+        </dx:ASPxSplitter>
+    </div>
+    <dx:ASPxLoadingPanel ID="LoadingPanel" ClientInstanceName="loadingPanel" runat="server" Modal="true" Text="Yükleniyor&hellip;"></dx:ASPxLoadingPanel>
+    <asp:XmlDataSource ID="ToolbarMenuDataSource" runat="server" DataFile="~/App_Data/ToolbarMenu.xml" OnInit="ToolbarMenuDataSource_Init" />
+    <dx:ASPxPopupControl ID="EditMessagePopup" runat="server" ClientInstanceName="editMessagePopup" Width="600"
+        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+        ShowHeader="false" CloseOnEscape="true" Modal="true" OnCustomJSProperties="EditMessagePopup_CustomJSProperties" />
+</asp:Content>

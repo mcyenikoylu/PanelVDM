@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="DMProjectWebSilver.Global_asax" Language="C#" %>

@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DMPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="aspnet_Membership_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_Bolge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_Dokumanlar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_Duyurular" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_DuyurularSlider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_Grup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_MusteriTemsilcisi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_RoleMenuYetkileriSil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="D_Siparis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="D_TemlikRapor_Excel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ay" Type="int" Mode="In" />
+    <Parameter Name="Yil" Type="int" Mode="In" />
+    <Parameter Name="ExcelDosyaYolu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserKey" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="D_UrunTanimlari" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="I_Aktivasyon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Adi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Soyadi" Type="nvarchar" Mode="In" />
+    <Parameter Name="TCKN" Type="numeric" Mode="In" />
+    <Parameter Name="AnneKizlikSoyadi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Adres" Type="nvarchar" Mode="In" />
+    <Parameter Name="SehirID" Type="int" Mode="In" />
+    <Parameter Name="IlceID" Type="int" Mode="In" />
+    <Parameter Name="PostaKodu" Type="int" Mode="In" />
+    <Parameter Name="EMailAdresi" Type="nvarchar" Mode="In" />
+    <Parameter Name="IletisimTelefonu" Type="nvarchar" Mode="In" />
+    <Parameter Name="HatTelNumarasi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SimkartSeriNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="HatTarifeID" Type="int" Mode="In" />
+    <Parameter Name="Aciklama" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mnp" Type="bit" Mode="In" />
+    <Parameter Name="SimkartTipi_TipID9" Type="int" Mode="In" />
+    <Parameter Name="EFatura_TipID12" Type="int" Mode="In" />
+  </Function>
+  <Function Name="I_AktivasyonAraRapor_Excel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ExcelDosyaYolu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserKey" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_AktivasyonEvrak" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DosyaAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="DosyaTipi" Type="int" Mode="In" />
+    <Parameter Name="EvrakTipi" Type="int" Mode="In" />
+    <Parameter Name="AktivasyonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="I_AlSatKarlilik_Excel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ExcelDosyaYolu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserKey" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_Bayi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Aktif" Type="bit" Mode="In" />
+    <Parameter Name="BayiKodu" Type="nvarchar" Mode="In" />
+    <Parameter Name="BayiAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="BayiCariAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Grup_TipID1" Type="int" Mode="In" />
+    <Parameter Name="Bolge_TipID2" Type="int" Mode="In" />
+    <Parameter Name="SehirID" Type="int" Mode="In" />
+    <Parameter Name="IlceID" Type="int" Mode="In" />
+    <Parameter Name="SemtID" Type="int" Mode="In" />
+    <Parameter Name="MahalleID" Type="int" Mode="In" />
+    <Parameter Name="PKID" Type="int" Mode="In" />
+    <Parameter Name="Adres" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefon" Type="nchar" Mode="In" />
+    <Parameter Name="Faks" Type="nchar" Mode="In" />
+    <Parameter Name="Cep" Type="nchar" Mode="In" />
+    <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+    <Parameter Name="YetkiliAdiSoyadi" Type="nvarchar" Mode="In" />
+    <Parameter Name="MusteriTemsilcisiID" Type="int" Mode="In" />
+    <Parameter Name="BayiTipi_TipID3" Type="int" Mode="In" />
+    <Parameter Name="ResimAdi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="I_Bolge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Adi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="I_CariTakipTeminat_Excel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ExcelDosyaYolu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserKey" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_Dokuman" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DokumanAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="DosyaAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Aktif" Type="bit" Mode="In" />
+    <Parameter Name="DokumanTipi_TipID5" Type="int" Mode="In" />
+  </Function>
+  <Function Name="I_Duyurular" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Baslik" Type="nvarchar" Mode="In" />
+    <Parameter Name="Aciklama" Type="nvarchar" Mode="In" />
+    <Parameter Name="DuyuruTarihi" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="I_DuyurularPopup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ResimAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="DuyuruAdi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="I_DuyurularPopupLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="ResimAdi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="I_DuyurularSlider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ResimAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SiraNo" Type="int" Mode="In" />
+    <Parameter Name="Aktif" Type="bit" Mode="In" />
+    <Parameter Name="SlideAdi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="I_Grup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Adi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="I_MenuYetkileri" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="int" Mode="In" />
+    <Parameter Name="RoleID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_MusteriTemsilcisi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdiSoyadi" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_PrimHakedis_Excel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ExcelDosyaYolu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserKey" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_SilverRapor_Excel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ExcelDosyaYolu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserKey" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_Siparislerim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+    <Parameter Name="UrunID" Type="int" Mode="In" />
+    <Parameter Name="Adet" Type="int" Mode="In" />
+  </Function>
+  <Function Name="I_TemlikRapor_Excel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ExcelDosyaYolu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserKey" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="I_UrunTanimlari" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UrunKodu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UrunAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="KategoriID_TipID4" Type="int" Mode="In" />
+    <Parameter Name="Marka" Type="nvarchar" Mode="In" />
+    <Parameter Name="Model" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fiyat" Type="decimal" Mode="In" />
+    <Parameter Name="Resim" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="OD_SP_006_01_CARI_EKSTRE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CARI_KODU" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="OD_SP_AE_KAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="OD_SP_AEO_ENVANTER_006" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="OD_SP_PRONIST_006_FATURA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="OD_SP_US_006_01_MALZEME_SONALIMMALIYET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="R_AktivasyonAraRaporu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_AdresIlce" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SehirID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AdresSehir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_Aktivasyon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonAraRaporu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonEFatura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonFaturasiz" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonHatIptal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonSebekeIciGecis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonTaahhutname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonVodafoneNet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AktivasyonYonetici" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_AlSatKarlilik" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Bayi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_BayiID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiKodu" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="S_BayiTeminat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_Bolge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_CihazTakipAraRapor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_CihazTemlikRaporu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Dokumanlar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Duyurularim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="S_DuyurularPopup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="S_DuyurularSlider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Grup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_HedefSatisDurumu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+    <Parameter Name="BaslangicTarihi" Type="datetime" Mode="In" />
+    <Parameter Name="BitisTarihi" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="S_HedefSatisDurumuPivot" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+    <Parameter Name="BaslangicTarihi" Type="datetime" Mode="In" />
+    <Parameter Name="BitisTarihi" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="S_Kullanici" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_MenuNavigation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="S_MenuYetkileri" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SP_IslemTipi" Type="int" Mode="In" />
+    <Parameter Name="RoleID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="S_MusteriTemsilcisi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="S_PrimHakedisRaporu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Roles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="S_Siparisler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Siparislerim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BayiID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Tarife" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Tip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AyiracID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="S_Urunler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="U_Bayi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="KayitID" Type="int" Mode="In" />
+    <Parameter Name="Aktif" Type="bit" Mode="In" />
+    <Parameter Name="BayiKodu" Type="nvarchar" Mode="In" />
+    <Parameter Name="BayiAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="BayiCariAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Grup_TipID1" Type="int" Mode="In" />
+    <Parameter Name="Bolge_TipID2" Type="int" Mode="In" />
+    <Parameter Name="SehirID" Type="int" Mode="In" />
+    <Parameter Name="IlceID" Type="int" Mode="In" />
+    <Parameter Name="SemtID" Type="int" Mode="In" />
+    <Parameter Name="MahalleID" Type="int" Mode="In" />
+    <Parameter Name="PKID" Type="int" Mode="In" />
+    <Parameter Name="Adres" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telefon" Type="nchar" Mode="In" />
+    <Parameter Name="Faks" Type="nchar" Mode="In" />
+    <Parameter Name="Cep" Type="nchar" Mode="In" />
+    <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+    <Parameter Name="YetkiliAdiSoyadi" Type="nvarchar" Mode="In" />
+    <Parameter Name="MusteriTemsilcisiID" Type="int" Mode="In" />
+    <Parameter Name="BayiTipi_TipID3" Type="int" Mode="In" />
+    <Parameter Name="ResimAdi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="U_Bolge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Adi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="U_Duyurular" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Baslik" Type="nvarchar" Mode="In" />
+    <Parameter Name="Aciklama" Type="nvarchar" Mode="In" />
+    <Parameter Name="DuyuruTarihi" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="U_DuyurularSlider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="ResimAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SiraNo" Type="int" Mode="In" />
+    <Parameter Name="Aktif" Type="bit" Mode="In" />
+    <Parameter Name="SlideAdi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="U_Grup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Adi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="U_MusteriTemsilcisi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="AdiSoyadi" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="U_Siparis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="OnayID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="U_UrunTanimlari" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="UrunKodu" Type="nvarchar" Mode="In" />
+    <Parameter Name="UrunAdi" Type="nvarchar" Mode="In" />
+    <Parameter Name="KategoriID_TipID4" Type="int" Mode="In" />
+    <Parameter Name="Marka" Type="nvarchar" Mode="In" />
+    <Parameter Name="Model" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fiyat" Type="decimal" Mode="In" />
+    <Parameter Name="Resim" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="DMPortalModelStoreContainer" />
+</Schema>

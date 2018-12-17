@@ -1,0 +1,153 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HedefSatisDurumu_GridView_Detail.ascx.cs" Inherits="DMProjectWeb.UserControls.ViewControls.HedefSatisDurumu_GridView_Detail" %>
+<%@ Register Assembly="DevExpress.XtraCharts.v18.1.Web, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraCharts.Web" TagPrefix="dxchartsui" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraCharts.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraCharts" TagPrefix="cc1" %>
+<div class="employeesDetailsMainContainer">
+    <dx:ASPxPageControl ID="DetailsPageControl" ClientInstanceName="detailsPageControl" runat="server" ActiveTabIndex="0" Width="100%">
+        <TabPages>
+            <dx:TabPage Text="Karne" Name="PivotGrid">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl1" runat="server">
+                        
+                        <dx:ASPxPivotGrid ID="PivotGrid" runat="server" Width="100%" ClientInstanceName="gridPivot"
+                            EnableCallBacks="false" Styles-HeaderStyle-Wrap="True" Styles-AreaStyle-Wrap="True">
+                            <Fields>
+                                <dx:PivotGridField
+                                    ID="fieldCategoryName" FieldName="CategoryName" Caption="Kategori"
+                                    Area="RowArea" AreaIndex="0" SortMode="DisplayText" />
+
+                                <dx:PivotGridField
+                                    ID="fieldAy" FieldName="AyAdi" Caption="Ay"
+                                    Area="ColumnArea" AreaIndex="0" SortMode="Value" SortBySummaryInfo-FieldName="Ay" />
+                                <dx:PivotGridField
+                                    ID="fieldYil" FieldName="Yil" Caption="Yıl"
+                                    Area="ColumnArea" AreaIndex="0" />
+
+                                <dx:PivotGridField
+                                    ID="fieldGross" FieldName="Gross" Caption="Gross"
+                                    Area="DataArea" AreaIndex="0" />
+                                <dx:PivotGridField
+                                    ID="fieldNet" FieldName="Net" Caption="Gerçekleşen"
+                                    Area="DataArea" AreaIndex="1" />
+                                <dx:PivotGridField
+                                    ID="fieldHedef" FieldName="Hedef" Caption="Hedef"
+                                    Area="DataArea" AreaIndex="2" />
+                                <dx:PivotGridField
+                                    ID="fieldPercents" 
+                                    FieldName="HedefYuzdesi" 
+                                    Caption="Gerçekleşme Yüzdesi"
+                                    Area="DataArea" 
+                                    AreaIndex="3" 
+                                    AllowedAreas="DataArea" 
+                                    SummaryDisplayType="PercentOfColumn" /> 
+                                <dx:PivotGridField
+                                    ID="fieldHedefKalan" FieldName="HedefKalan" Caption="Hedef Kalan"
+                                    Area="DataArea" AreaIndex="4" />
+                                <dx:PivotGridField
+                                    ID="fieldTahminiAyKapanisAdet" FieldName="TahminiAyKapanisAdet" Caption="Tahmini Ay Kapanış Adet"
+                                    Area="DataArea" AreaIndex="5" />
+                                <dx:PivotGridField
+                                    ID="fieldTahminiAyKapanisYuzdesi" FieldName="TahminiAyKapanisYuzdesi" Caption="Tahmini Ay Kapanış Yüzdesi"
+                                    Area="DataArea" AreaIndex="6" CellFormat-FormatType="Numeric" CellFormat-FormatString="p2" />
+                            </Fields>
+                            <OptionsView
+                                ShowFilterHeaders="False" ShowRowGrandTotals="False" ShowColumnTotals="False" 
+                                ShowRowHeaders="False" ShowDataHeaders="False" ShowColumnHeaders="False"
+                                VerticalScrollBarMode="Visible" />
+                            <OptionsFilter NativeCheckBoxes="False" />
+                            <OptionsPager RowsPerPage="4" PagerAlign="Right" Position="Bottom"></OptionsPager>
+                            <OptionsChartDataSource ProvideDataByColumns="false" ProvideRowGrandTotals="true" />
+                            <OptionsCustomization AllowPrefilter="false" AllowCustomizationForm="false" />
+                            <Styles>
+                                <HeaderStyle Wrap="True" CssClass="header"></HeaderStyle>
+                                <AreaStyle Wrap="True"></AreaStyle>
+
+                                <RowAreaStyle CssClass="rowArea"></RowAreaStyle>
+                                <ColumnAreaStyle CssClass="columnArea"></ColumnAreaStyle>
+                                <DataAreaStyle CssClass="dataArea"></DataAreaStyle>
+                            </Styles>
+                        </dx:ASPxPivotGrid>
+
+                    </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+            <dx:TabPage Text="Chart" Name="Chart" Visible="false">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl2" runat="server">
+
+
+                        <dxchartsui:WebChartControl ID="RevenueChart" runat="server" ClientInstanceName="revenueChart" Width="1400px" Height="520px" Theme="Mulberry" CrosshairEnabled="True" PaletteName="Apex">
+                            <Legend Visibility="True"></Legend>
+                            <SeriesSerializable>
+                                <cc1:Series Name="Hedef">
+                                    <points>
+                                    <cc1:SeriesPoint Values="14" ColorSerializable="#953734" ArgumentSerializable="Cenker" SeriesPointID="0"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="45" ColorSerializable="#D99694" ArgumentSerializable="Ayta&#231;" SeriesPointID="1"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="78" ColorSerializable="#E5B9B7" ArgumentSerializable="Sevim" SeriesPointID="2"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="24" ColorSerializable="#F2DCDB" ArgumentSerializable="Zeliha" SeriesPointID="3"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="55" ColorSerializable="#FF9D71" ArgumentSerializable="Oğuz" SeriesPointID="4"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="34" ColorSerializable="#FAC08F" ArgumentSerializable="M&#252;zeyyen" SeriesPointID="5"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="21" ColorSerializable="#FBD5B5" ArgumentSerializable="Berk" SeriesPointID="6"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="32" ColorSerializable="#FDEADA" ArgumentSerializable="Mert" SeriesPointID="7"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="58" ColorSerializable="#E36C09" ArgumentSerializable="Vedat" SeriesPointID="8"></cc1:SeriesPoint>
+                                    </points>
+
+                                    <viewserializable>
+                                        <cc1:PieSeriesView>
+                                            <titles>
+                                                <cc1:SeriesTitle />
+                                            </titles>
+                                        </cc1:PieSeriesView>
+                                    </viewserializable>
+                                </cc1:Series>
+
+                                <cc1:Series Name="Satış" LabelsVisibility="True">
+                                    <points>
+                                    <cc1:SeriesPoint Values="234" ColorSerializable="#953734" ArgumentSerializable="Honda" SeriesPointID="0"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="433" ColorSerializable="#D99694" ArgumentSerializable="Merso" SeriesPointID="1"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="5432" ColorSerializable="#E5B9B7" ArgumentSerializable="Citroen" SeriesPointID="2"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="241" ColorSerializable="#F2DCDB" ArgumentSerializable="Opel" SeriesPointID="3"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="2345" ColorSerializable="#FF9D71" ArgumentSerializable="BMW" SeriesPointID="4"></cc1:SeriesPoint>
+                                    </points>
+                                    <viewserializable>
+                                    <cc1:PieSeriesView><Titles>
+                                    <cc1:SeriesTitle></cc1:SeriesTitle>
+                                    </Titles>
+                                    </cc1:PieSeriesView>
+                                    </viewserializable>
+                                </cc1:Series>
+
+                                <cc1:Series Name="Durum" LabelsVisibility="True">
+                                    <viewserializable>
+                                    <cc1:DoughnutSeriesView><Titles>
+                                    <cc1:SeriesTitle></cc1:SeriesTitle>
+                                    </Titles>
+                                    </cc1:DoughnutSeriesView>
+                                    </viewserializable>
+                                    <points>
+                                    <cc1:SeriesPoint Values="8465" ColorSerializable="#4F81BD" ArgumentSerializable="2016" SeriesPointID="0"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="7568" ColorSerializable="#95B3D7" ArgumentSerializable="2017" SeriesPointID="1"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="6887" ColorSerializable="#B8CCE4" ArgumentSerializable="2015" SeriesPointID="2"></cc1:SeriesPoint>
+                                    <cc1:SeriesPoint Values="3548" ColorSerializable="#DBE5F1" ArgumentSerializable="2014" SeriesPointID="3"></cc1:SeriesPoint>
+                                    </points>
+                                    <viewserializable>
+                                    <cc1:DoughnutSeriesView></cc1:DoughnutSeriesView>
+                                    </viewserializable>
+                                </cc1:Series>
+
+                            </SeriesSerializable>
+                            <Titles>
+                                <cc1:ChartTitle Text="Hedef Satış Durumu" />
+                            </Titles>
+                            <BorderOptions Visibility="False" />
+                        </dxchartsui:WebChartControl>
+
+
+
+
+                    </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+        </TabPages>
+    </dx:ASPxPageControl>
+</div>
