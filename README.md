@@ -1,4 +1,6 @@
-# PanelVDM
+# Panel VDM, Vodafone Management Portal
+
+Vodafone Turkey's web portal that manages new registration and service operations for SIM Card customers. Vodafone Distribution Center, VDM Portal.
 
 The project I developed for the use of Vodafone Distribution Centers. A system where Silver manages its dealers, sub-dealers and its own shops in a single system.
 
