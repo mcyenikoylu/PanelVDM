@@ -1,6 +1,6 @@
 # PanelVDM
 
-Vodafone Dağıtım Merkezlerinin kullanımı için geliştirmiş olduğum proje. Silver bayileri, alt bayileri ve kendina ait shopları tek bir sistemde yönettiği sistem.
+The project I developed for the use of Vodafone Distribution Centers. A system where Silver manages its dealers, sub-dealers and its own shops in a single system.
 
 ![1](https://user-images.githubusercontent.com/12815851/76332072-faf91880-6300-11ea-8931-71fad54f5a1e.JPG)
 ![0000](https://user-images.githubusercontent.com/12815851/76332063-f896be80-6300-11ea-89b9-b989cb918b8d.JPG)
