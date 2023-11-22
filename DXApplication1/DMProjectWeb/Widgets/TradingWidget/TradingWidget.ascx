@@ -60,16 +60,20 @@
                     };
                     finansList.Add(x);
                 }
-                _break:;
+            _break:;
 
                 var primList = db.S_PrimHakedisRaporu(Convert.ToInt32(BayiID)).ToList();
-                var z = new BayiFinansOzeti
+                if (primList.Count > 0)
                 {
-                    baslik = "Son Prim Hakedişi",
-                    deger = primList.First().MahsupSonrasiKalanTutarKDVDahil.ToString()
-                };
-                finansList.Add(z);
-          
+                    var z = new BayiFinansOzeti
+                    {
+                        baslik = "Son Prim Hakedişi",
+                        deger = primList.First().MahsupSonrasiKalanTutarKDVDahil.ToString()
+                    };
+                    finansList.Add(z);
+                }
+                
+
                 Rpt.DataSource = finansList;
                 Rpt.DataBind();
             }

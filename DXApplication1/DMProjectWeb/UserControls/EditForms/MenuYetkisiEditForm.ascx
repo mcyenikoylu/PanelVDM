@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MenuYetkisiEditForm.ascx.cs" Inherits="DMProjectWeb.UserControls.EditForms.MenuYetkisiEditForm" %>
-<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v18.1, Version=18.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v18.2, Version=18.2.18.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
 <script>
     function treeList_SelectionChanged(s, e) {
         window.setTimeout(function () { s.PerformCustomDataCallback(''); }, 0)
